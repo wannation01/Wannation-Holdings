@@ -1,0 +1,1 @@
+# OS\n.DS_Store\nThumbs.db\n\n# IDE\n.vscode/\n.idea/\n*.swp\n*.swo\n*~\n\n# Dependencies\nnode_modules/\npackage-lock.json\nyarn.lock\n\n# Build\ndist/\nbuild/\n.env.local\n.env.*.local\n\n# Logs\n*.log\nnpm-debug.log*\nyarn-debug.log*\n\n# Analytics\n.analytics\n
