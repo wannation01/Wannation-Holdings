@@ -1,33 +1,46 @@
-<!-- Wannation Holdings - Professional Modern Website -->
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Wannation Holdings - Where Innovation Meets Excellence. Explore our brand, values, and mission.">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    
+    <!-- Security & Privacy Headers -->
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline'; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; img-src 'self' data:; connect-src 'self'">
+    <meta http-equiv="X-Content-Type-Options" content="nosniff">
+    <meta http-equiv="X-Frame-Options" content="SAMEORIGIN">
+    <meta http-equiv="X-XSS-Protection" content="1; mode=block">
+    <meta name="referrer" content="strict-origin-when-cross-origin">
+    <meta name="permissions-policy" content="geolocation=(), microphone=(), camera=(), payment=()">
+    
+    <!-- Standard Meta Tags -->
+    <meta name="description" content="Wannation Holdings - Where Innovation Meets Excellence. Professional branding and business solutions.">
     <meta name="keywords" content="Wannation, Holdings, Innovation, Excellence, Brand">
     <meta name="author" content="Wannation Holdings">
     <meta name="theme-color" content="#FF0000">
-    <title>Wannation Holdings | Innovation & Excellence</title>
+    
+    <!-- Open Graph (Social Sharing) -->
+    <meta property="og:title" content="Wannation Holdings">
+    <meta property="og:description" content="Where Innovation Meets Excellence">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://wannation01.github.io/Wannation-Holdings/">
     
     <!-- Favicon -->
     <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90' font-weight='bold' fill='%23FF0000'>W</text></svg>">
+    <link rel="apple-touch-icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 180 180'><rect fill='%23FF0000' width='180' height='180'/><text x='50%' y='50%' font-size='120' font-weight='bold' fill='white' text-anchor='middle' dominant-baseline='middle'>W</text></svg>">
     
-    <!-- Google Fonts -->
+    <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Poppins:wght@600;700;800&display=swap" rel="stylesheet">
     
-    <!-- Color Palette -->
+    <!-- Stylesheets -->
     <link rel="stylesheet" href="assets/colors/palette.css">
     
+    <title>Wannation Holdings | Innovation & Excellence</title>
+    
     <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-        
+        * { margin: 0; padding: 0; box-sizing: border-box; }
         html { scroll-behavior: smooth; }
         
         body {
@@ -68,15 +81,9 @@
             transition: all 0.3s ease;
         }
         
-        .logo:hover {
-            transform: scale(1.05);
-            text-shadow: 0 0 20px rgba(255, 0, 0, 0.5);
-        }
+        .logo:hover { transform: scale(1.05); text-shadow: 0 0 20px rgba(255, 0, 0, 0.5); }
         
-        nav {
-            display: flex;
-            gap: 2rem;
-        }
+        nav { display: flex; gap: 2rem; }
         
         nav a {
             color: var(--color-text-secondary);
@@ -98,13 +105,8 @@
             transition: width 0.3s ease;
         }
         
-        nav a:hover {
-            color: var(--color-primary-red);
-        }
-        
-        nav a:hover::after {
-            width: 100%;
-        }
+        nav a:hover { color: var(--color-primary-red); }
+        nav a:hover::after { width: 100%; }
         
         main { margin-top: 80px; }
         
@@ -249,6 +251,8 @@
             transform: translateY(-3px);
         }
         
+        .cta-button:active { transform: translateY(-1px); }
+        
         .features {
             max-width: 1400px;
             margin: 6rem auto;
@@ -306,9 +310,7 @@
             transition: left 0.3s ease;
         }
         
-        .feature-card:hover::before {
-            left: 100%;
-        }
+        .feature-card:hover::before { left: 100%; }
         
         .feature-card:hover {
             background: rgba(255, 0, 0, 0.08);
@@ -361,10 +363,7 @@
             margin-top: 6rem;
         }
         
-        .footer-content {
-            max-width: 1400px;
-            margin: 0 auto;
-        }
+        .footer-content { max-width: 1400px; margin: 0 auto; }
         
         .footer-links {
             display: flex;
@@ -381,9 +380,7 @@
             font-size: 0.95rem;
         }
         
-        .footer-links a:hover {
-            color: var(--color-primary-red);
-        }
+        .footer-links a:hover { color: var(--color-primary-red); }
         
         .social-links {
             display: flex;
@@ -420,26 +417,25 @@
             border-top: 1px solid rgba(255, 0, 0, 0.1);
         }
         
+        .privacy-notice {
+            background: rgba(255, 0, 0, 0.05);
+            border-left: 4px solid var(--color-primary-red);
+            padding: 1rem;
+            margin: 2rem auto;
+            max-width: 600px;
+            border-radius: 4px;
+            font-size: 0.85rem;
+            color: var(--color-text-secondary);
+        }
+        
         @keyframes fadeInDown {
-            from {
-                opacity: 0;
-                transform: translateY(-30px);
-            }
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
+            from { opacity: 0; transform: translateY(-30px); }
+            to { opacity: 1; transform: translateY(0); }
         }
         
         @keyframes fadeInUp {
-            from {
-                opacity: 0;
-                transform: translateY(30px);
-            }
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
+            from { opacity: 0; transform: translateY(30px); }
+            to { opacity: 1; transform: translateY(0); }
         }
         
         @keyframes float {
@@ -450,6 +446,7 @@
         @media (max-width: 768px) {
             .header-content { flex-direction: column; gap: 1rem; }
             nav { flex-wrap: wrap; gap: 1rem; justify-content: center; }
+            .logo { font-size: 20px; }
             .logo-showcase { grid-template-columns: 1fr; }
             .feature-grid { grid-template-columns: 1fr; }
             .footer-links { flex-direction: column; gap: 1rem; }
@@ -530,7 +527,7 @@
             
             <div class="feature-grid">
                 <div class="feature-card">
-                    <h3>���� Visual Identity</h3>
+                    <h3>🎨 Visual Identity</h3>
                     <p>Our logos represent more than symbols. They embody our mission, values, and vision for the future.</p>
                 </div>
                 <div class="feature-card">
@@ -553,33 +550,52 @@
     
     <footer id="contact">
         <div class="footer-content">
+            <div class="privacy-notice">
+                <strong>🔒 Privacy Notice:</strong> We respect your privacy. See our <a href="PRIVACY.md" style="color: var(--color-primary-red);">Privacy Policy</a> and <a href="SECURITY_PRIVACY.md" style="color: var(--color-primary-red);">Security & Privacy</a> for details.
+            </div>
+            
             <div class="footer-links">
                 <a href="README.md">About Us</a>
                 <a href="BRANDING.md">Brand Guidelines</a>
                 <a href="SUPPORT.md">Support</a>
                 <a href="PRIVACY.md">Privacy Policy</a>
+                <a href="SECURITY_PRIVACY.md">Security & Privacy</a>
                 <a href="CODE_OF_CONDUCT.md">Code of Conduct</a>
                 <a href="CONTRIBUTING.md">Contributing</a>
             </div>
             
             <div class="social-links">
-                <a href="https://twitter.com" title="Twitter">𝕏</a>
-                <a href="https://facebook.com" title="Facebook">f</a>
-                <a href="https://linkedin.com" title="LinkedIn">in</a>
-                <a href="https://instagram.com" title="Instagram">📷</a>
+                <a href="https://twitter.com" title="Twitter" aria-label="Twitter">𝕏</a>
+                <a href="https://facebook.com" title="Facebook" aria-label="Facebook">f</a>
+                <a href="https://linkedin.com" title="LinkedIn" aria-label="LinkedIn">in</a>
+                <a href="https://instagram.com" title="Instagram" aria-label="Instagram">📷</a>
             </div>
             
             <div class="footer-copyright">
-                <p>&copy; 2026 Wannation Holdings. All Rights Reserved. | Crafted with passion for excellence</p>
+                <p>&copy; 2026 Wannation Holdings. All Rights Reserved. | <a href="SECURITY.md" style="color: inherit;">Report Security Issue</a></p>
+                <p style="margin-top: 10px; color: var(--color-text-muted);">Crafted with passion for excellence | Privacy-First Design</p>
             </div>
         </div>
     </footer>
     
     <script>
+        // Security: Disable right-click context menu on sensitive content (optional)
+        // document.addEventListener('contextmenu', e => e.preventDefault());
+        
+        // Analytics: Page scroll tracking for privacy-respecting analytics
         let scrollProgress = 0;
         window.addEventListener('scroll', () => {
             const totalScroll = document.documentElement.scrollHeight - window.innerHeight;
             scrollProgress = (window.scrollY / totalScroll) * 100;
+            console.log(`Page scroll: ${Math.round(scrollProgress)}%`);
+        });
+        
+        // Accessibility: Keyboard navigation
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'Escape') {
+                // Close any modals if they exist
+                console.log('Escape key pressed');
+            }
         });
     </script>
 </body>
