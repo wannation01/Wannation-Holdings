@@ -1,1 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>WANnation Media</title>
+<style>
+body{background:#000;color:#fff;font-family:Arial,sans-serif;margin:0;padding:0}
+header{background:#111;padding:20px;text-align:center;border-bottom:2px solid #E5000F}
+h1{color:#E5000F}
+nav{display:flex;justify-content:center;gap:10px;flex-wrap:wrap;padding:10px;background:#222}
+nav button{padding:10px 20px;background:#E5000F;color:#fff;border:none;border-radius:20px;cursor:pointer}
+nav button:hover{background:#ff1122}
+main{padding:40px 20px;max-width:1200px;margin:0 auto}
+.section{display:none}
+.section.active{display:block}
+.card{background:#1a1a1a;padding:20px;margin:20px 0;border-radius:16px;border:1px solid #333}
+h2{color:#E5000F}
+.btn{padding:12px 24px;background:#E5000F;color:#fff;border:none;border-radius:12px;cursor:pointer;font-size:16px}
+</style>
+</head>
+<body>
+
+<header>
+<h1>🔥 WANnation Media</h1>
+<p>Venda's Ultimate Media Hub</p>
+</header>
+
+<nav>
+<button onclick="show('home')">🏠 Home</button>
+<button onclick="show('news')">📰 News</button>
+<button onclick="show('music')">🎵 Music</button>
+<button onclick="show('charts')">🏆 Charts</button>
+<button onclick="show('jobs')">💼 Jobs</button>
+<button onclick="show('business')">🏢 Business</button>
+<button onclick="show('gallery')">📸 Gallery</button>
+</nav>
+
+<main>
+<div id="home" class="section active">
+<div class="card">
+<h2>Welcome to WANnation Media</h2>
+<p>Your all-in-one platform for Venda news, music, jobs, and business!</p>
+<button class="btn">Get Started</button>
+</div>
+<div class="card">
+<h2>📊 Stats</h2>
+<p>127 Visitors Today | 24 News Articles | 20 Songs</p>
+</div>
+</div>
+
+<div id="news" class="section">
+<div class="card"><h2>📰 Latest News</h2><p>Makhadzi announces new album - 2 hours ago</p><p>Vhembe economy grows - 4 hours ago</p><p>Venda Festival announced - 6 hours ago</p></div>
+</div>
+
+<div id="music" class="section">
+<div class="card"><h2>🎵 Venda Music</h2><p>Sesi Ka Rose - Makhadzi ▶️</p><p>Sakha Wena - Makhadzi ▶️</p><p>Venda Mix 2025 - DJ Thohoyandou ▶️</p></div>
+</div>
+
+<div id="charts" class="section">
+<div class="card"><h2>🏆 Top 5 Charts</h2><p>1️⃣ Sesi Ka Rose - Makhadzi</p><p>2️⃣ Sakha Wena - Makhadzi</p><p>3️⃣ Venda Mix 2025 - DJ Thohoyandou</p></div>
+</div>
+
+<div id="jobs" class="section">
+<div class="card"><h2>💼 Jobs & Scholarships</h2><p>Radio Presenter - Thohoyandou FM</p><p>Teacher - Vhembe DOE</p><p>NSFAS Bursary 2026</p></div>
+</div>
+
+<div id="business" class="section">
+<div class="card"><h2>🏢 Business Directory</h2><p>Thohoyandou Restaurant</p><p>Vhembe Car Dealership</p><p>Toni Pharmacy</p></div>
+</div>
+
+<div id="gallery" class="section">
+<div class="card"><h2>📸 Gallery</h2><p>Venda Culture Photos Coming Soon</p></div>
+</div>
+</main>
+
+<script>
+function show(section) {
+document.querySelectorAll('.section').forEach(s => s.classList.remove('active'));
+document.getElementById(section).classList.add('active');
+}
+</script>
+
+</body>
+</html>
 
