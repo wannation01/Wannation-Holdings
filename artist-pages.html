@@ -1,0 +1,280 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="night">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Artist Profile — WANnation Media</title>
+<link rel="icon" href="Untitled design.png">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+<style>
+* {margin:0;padding:0;box-sizing:border-box;}
+:root {
+  --primary: #E5000F; --primary-glow: rgba(229, 0, 15, 0.5); --secondary: #BF5FFF; --gold: #FFD700;
+  --bg: #000000; --bg-card: #1C1C1E; --glass-light: rgba(255, 255, 255, 0.1);
+  --text: #FFFFFF; --text-secondary: rgba(255, 255, 255, 0.7); --border: rgba(255, 255, 255, 0.12);
+}
+[data-theme="day"] {
+  --bg: #FFFFFF; --bg-card: #F2F2F7; --text: #1D1D1F; --text-secondary: rgba(29, 29, 31, 0.7);
+}
+body { background: var(--bg); color: var(--text); font-family: 'Inter', sans-serif; }
+header { position: sticky; top: 0; z-index: 100; background: rgba(0,0,0,0.8); backdrop-filter: blur(20px); border-bottom: 1px solid var(--border); padding: 12px 20px; }
+[data-theme="day"] header { background: rgba(255,255,255,0.8); }
+.header-content { max-width: 1400px; margin: 0 auto; display: flex; align-items: center; justify-content: space-between; }
+.logo { display: flex; align-items: center; gap: 12px; }
+.logo-title { font-size: 22px; font-weight: 900; }
+.nav-links { display: flex; gap: 24px; }
+.nav-links a { color: var(--text-secondary); text-decoration: none; font-weight: 500; }
+.nav-links a:hover { color: var(--primary); }
+.nav-actions { display: flex; gap: 12px; }
+.btn { padding: 10px 20px; border-radius: 10px; font-weight: 700; border: none; cursor: pointer; text-decoration: none; }
+.btn-primary { background: var(--primary); color: white; }
+.btn-secondary { background: var(--glass-light); border: 1px solid var(--border); color: var(--text); }
+.theme-toggle { width: 40px; height: 40px; border-radius: 50%; background: var(--glass-light); border: 1px solid var(--border); display: flex; align-items: center; justify-content: center; cursor: pointer; font-size: 20px; }
+main { max-width: 1400px; margin: 0 auto; padding: 40px 20px 140px; }
+.artist-header {
+  background: linear-gradient(135deg, rgba(229, 0, 15, 0.3), rgba(191, 95, 255, 0.2));
+  border-radius: 24px; padding: 48px; margin-bottom: 40px; display: flex; gap: 40px; align-items: center;
+}
+.artist-avatar {
+  width: 200px; height: 200px; border-radius: 50%;
+  background: linear-gradient(135deg, var(--primary), var(--secondary));
+  display: flex; align-items: center; justify-content: center; font-size: 96px; flex-shrink: 0;
+}
+.artist-info h1 { font-size: 48px; font-weight: 900; margin-bottom: 12px; }
+.artist-genre { font-size: 20px; color: var(--text-secondary); margin-bottom: 16px; }
+.artist-stats { display: flex; gap: 32px; margin-bottom: 24px; }
+.stat { text-align: center; }
+.stat-value { font-size: 28px; font-weight: 800; }
+.stat-label { font-size: 13px; color: var(--text-secondary); }
+.artist-bio { max-width: 800px; margin-bottom: 40px; }
+.artist-bio h2 { font-size: 28px; font-weight: 800; margin-bottom: 16px; }
+.artist-bio p { font-size: 16px; line-height: 1.8; color: var(--text-secondary); }
+.section-title { font-size: 32px; font-weight: 800; margin-bottom: 24px; }
+.songs-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); gap: 12px; }
+.song-row {
+  background: var(--bg-card); border-radius: 12px; padding: 16px;
+  display: flex; align-items: center; gap: 16px; cursor: pointer;
+  transition: all 0.3s; border: 1px solid var(--border);
+}
+.song-row:hover { border-color: var(--primary); transform: translateX(4px); }
+.song-number { font-size: 20px; font-weight: 700; color: var(--text-secondary); width: 40px; }
+.song-info { flex: 1; }
+.song-title { font-weight: 700; font-size: 16px; }
+.song-duration { color: var(--text-secondary); font-size: 14px; }
+.premium-lock {
+  background: rgba(0, 0, 0, 0.8); padding: 12px; border-radius: 12px;
+  text-align: center; color: var(--text-secondary); margin-top: 24px;
+}
+.premium-badge {
+  background: linear-gradient(135deg, var(--gold), #FFA500); color: #000;
+  padding: 4px 12px; border-radius: 20px; font-size: 11px; font-weight: 700;
+  display: inline-block; margin-left: 8px;
+}
+@media (max-width: 768px) { .nav-links { display: none; } .artist-header { flex-direction: column; text-align: center; } .artist-avatar { width: 150px; height: 150px; font-size: 72px; } }
+</style>
+</head>
+<body>
+
+<header>
+  <div class="header-content">
+    <div class="logo">
+      <img src="Untitled design.png" style="width:40px;height:40px;border-radius:50%;" onerror="this.style.display='none';this.nextElementSibling.style.display='block'">
+      <span style="font-size:32px;display:none;">🪘</span>
+      <div>
+        <div class="logo-title">WANNATION MEDIA</div>
+      </div>
+    </div>
+    <nav class="nav-links">
+      <a href="index.html">Home</a>
+      <a href="artists.html">Artists</a>
+      <a href="news.html">News</a>
+      <a href="premium.html">Premium</a>
+    </nav>
+    <div class="nav-actions">
+      <button class="theme-toggle" onclick="toggleTheme()">☀️</button>
+      <a href="login.html" class="btn btn-primary">Login</a>
+    </div>
+  </div>
+</header>
+
+<main>
+  <div class="artist-header" id="artist-header">
+    <div class="artist-avatar" id="artist-avatar">👑</div>
+    <div class="artist-info">
+      <h1 id="artist-name">Loading...</h1>
+      <div class="artist-genre" id="artist-genre">Loading...</div>
+      <div class="artist-stats">
+        <div class="stat">
+          <div class="stat-value" id="artist-followers">0</div>
+          <div class="stat-label">Followers</div>
+        </div>
+        <div class="stat">
+          <div class="stat-value" id="artist-songs">0</div>
+          <div class="stat-label">Songs</div>
+        </div>
+        <div class="stat">
+          <div class="stat-value" id="artist-plays">0</div>
+          <div class="stat-label">Total Plays</div>
+        </div>
+      </div>
+      <div style="display: flex; gap: 12px;">
+        <button class="btn btn-primary" onclick="playAll()">▶ Play All</button>
+        <button class="btn btn-secondary">♡ Follow</button>
+      </div>
+    </div>
+  </div>
+
+  <div class="artist-bio">
+    <h2>Biography</h2>
+    <p id="artist-bio">Loading...</p>
+  </div>
+
+  <h2 class="section-title">🔥 Popular Songs</h2>
+  <div id="songs-grid" class="songs-grid"></div>
+
+  <div class="premium-lock">
+    🔒 <strong>20+ More Songs</strong> <span class="premium-badge">PREMIUM</span><br>
+    <small>Subscribe to WANnation Premium to access the complete discography</small>
+  </div>
+</main>
+
+<script>
+const artists = {
+  'makhadzi': {
+    name: 'Makhadzi',
+    genre: 'Amapiano / Venda',
+    icon: '👑',
+    followers: '2.4M',
+    songs: 48,
+    plays: '156M',
+    bio: 'Makhadzi is one of South Africa\'s most celebrated Venda artists, known for blending traditional Venda music with modern Amapiano and Afro-house. With multiple platinum albums and international collaborations, she has become a global ambassador for Venda culture and music.',
+    songs: [
+      { title: 'Sesi Ka Rose', duration: '3:45', videoId: 'hj5XOU9XgjM' },
+      { title: 'Sakha Wena', duration: '4:12', videoId: 'oKybWCvNQAc' },
+      { title: 'Baloi', duration: '3:28', videoId: '8PdXWtcuQKk' },
+      { title: 'Tshikwembu', duration: '3:56', videoId: 'abc123' },
+      { title: 'Ndivha Yanga', duration: '4:02', videoId: 'abc124' }
+    ]
+  },
+  'una-rams': {
+    name: 'Una Rams',
+    genre: 'Venda Pop',
+    icon: '🎤',
+    followers: '156K',
+    songs: 22,
+    plays: '12M',
+    bio: 'Una Rams is a rising Venda pop sensation known for her powerful vocals and contemporary sound that bridges traditional Venda music with modern pop influences.',
+    songs: [
+      { title: 'Venda Girl', duration: '3:32', videoId: 'abc125' },
+      { title: 'Makhadzi', duration: '3:18', videoId: 'abc126' },
+      { title: 'Tshikona', duration: '4:05', videoId: 'abc127' }
+    ]
+  },
+  'dj-thohoyandou': {
+    name: 'DJ Thohoyandou',
+    genre: 'Venda House',
+    icon: '🎧',
+    followers: '89K',
+    songs: 67,
+    plays: '8M',
+    bio: 'DJ Thohoyandou is the king of Venda House music, mixing traditional Tshivenda lyrics with deep house beats that get everyone dancing.',
+    songs: [
+      { title: 'Venda Mix 2025', duration: '58:32', videoId: 'MkLmwXZ-k1M' },
+      { title: 'House Venda', duration: '6:45', videoId: 'abc128' }
+    ]
+  },
+  'mukwevho-sisters': {
+    name: 'Mukwevho Sisters',
+    genre: 'Gospel',
+    icon: '⛪',
+    followers: '234K',
+    songs: 31,
+    plays: '25M',
+    bio: 'The Mukwevho Sisters are a beloved gospel group that has brought spiritual upliftment through their harmonious Venda gospel music for over a decade.',
+    songs: [
+      { title: 'Tsini Ha Murena', duration: '4:23', videoId: 'RGFQYh8dRps' },
+      { title: 'Hosi Yanga', duration: '3:56', videoId: 'abc129' }
+    ]
+  },
+  'takesure-zamar': {
+    name: 'Takesure Zamar',
+    genre: 'Gospel',
+    icon: '🙏',
+    followers: '178K',
+    songs: 19,
+    plays: '18M',
+    bio: 'Takesure Zamar is a powerhouse gospel artist known for his anointed worship music that has blessed thousands across South Africa.',
+    songs: [
+      { title: 'Venda Worship', duration: '5:12', videoId: 'j7DD60zosNA' },
+      { title: 'Muteva Wangu', duration: '4:34', videoId: 'abc130' }
+    ]
+  },
+  'mizo-phyll': {
+    name: 'Mizo Phyll',
+    genre: 'Venda Hip Hop',
+    icon: '🎤',
+    followers: '112K',
+    songs: 28,
+    plays: '9M',
+    bio: 'Mizo Phyll is Venda\'s hottest hip hop artist, breaking streaming records with his authentic Tshivenda rap that speaks to the youth.',
+    songs: [
+      { title: 'Venda Rap', duration: '3:28', videoId: 'abc131' },
+      { title: 'Tshovola', duration: '3:45', videoId: 'abc132' }
+    ]
+  }
+};
+
+function loadArtist() {
+  const params = new URLSearchParams(window.location.search);
+  const slug = params.get('slug') || 'makhadzi';
+  const artist = artists[slug];
+  
+  if(!artist) {
+    document.body.innerHTML = '<div style="display:flex;align-items:center;justify-content:center;min-height:100vh;color:#fff;">Artist not found</div>';
+    return;
+  }
+  
+  document.getElementById('artist-avatar').textContent = artist.icon;
+  document.getElementById('artist-name').textContent = artist.name;
+  document.getElementById('artist-genre').textContent = artist.genre;
+  document.getElementById('artist-followers').textContent = artist.followers;
+  document.getElementById('artist-songs').textContent = artist.songs;
+  document.getElementById('artist-plays').textContent = artist.plays;
+  document.getElementById('artist-bio').textContent = artist.bio;
+  
+  document.getElementById('songs-grid').innerHTML = artist.songs.map((song, i) => `
+    <div class="song-row" onclick="openVideo('${song.videoId}')">
+      <div class="song-number">${i + 1}</div>
+      <div class="song-info">
+        <div class="song-title">${song.title}</div>
+        <div class="song-duration">${song.duration}</div>
+      </div>
+    </div>
+  `).join('');
+}
+
+function openVideo(videoId) {
+  window.open(`https://www.youtube.com/embed/${videoId}?autoplay=1`, '_blank');
+}
+
+function playAll() {
+  const params = new URLSearchParams(window.location.search);
+  const slug = params.get('slug') || 'makhadzi';
+  const artist = artists[slug];
+  if(artist && artist.songs[0]) {
+    openVideo(artist.songs[0].videoId);
+  }
+}
+
+function toggleTheme() {
+  const html = document.documentElement;
+  const current = html.getAttribute('data-theme');
+  const next = current === 'night' ? 'day' : 'night';
+  html.setAttribute('data-theme', next);
+  localStorage.setItem('wannation-theme', next);
+}
+
+document.addEventListener('DOMContentLoaded', loadArtist);
+</script>
+</body>
+</html>
