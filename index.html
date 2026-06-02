@@ -12,7 +12,7 @@
   --accent:#BF5FFF;
   --bg:#0A0A0F;
   --card:#12121F;
-  --glass:rgba(255,255,255,.08);
+  --glass:rgba(255,255,255,.085);
   --text:#F8F8FA;
   --text2:rgba(248,248,250,.78);
 }
@@ -26,15 +26,15 @@ body {
   overflow-x:hidden;
 }
 
-/* Glassmorphism with backdrop-filter */
+/* Optimized Glassmorphism */
 .glass {
   background:var(--glass);
-  backdrop-filter:blur(32px) saturate(170%) contrast(105%);
+  backdrop-filter:blur(32px) saturate(170%) contrast(110%);
   border:1px solid rgba(229,0,15,.25);
   border-radius:20px;
 }
 
-/* Music Cards - Apple Music Style */
+/* Apple Music Cards */
 .mcard {
   background:var(--card);
   border-radius:16px;
@@ -78,7 +78,7 @@ body {
   transform:translate(-50%,-50%) scale(1);
 }
 
-/* Bottom Player */
+/* Player */
 .player {
   position:fixed;
   bottom:0;
@@ -100,8 +100,8 @@ body {
 
 /* Responsive */
 @media (max-width: 768px) {
-  .mcard .mart { height:160px; font-size:62px; }
-  .player { height:78px; padding:0 16px; }
+  .mart { height:160px; font-size:62px; }
+  .player { height:78px; padding:0 16px; gap:12px; }
 }
 </style>
 </head>
@@ -120,7 +120,7 @@ body {
 </nav>
 
 <!-- Hero -->
-<div style="padding:80px 24px 60px;text-align:center;background:linear-gradient(to bottom,#1a0015,#0A0A0F);">
+<div style="padding:90px 24px 70px;text-align:center;background:linear-gradient(to bottom,#1a0015,#0A0A0F);">
   <h1 style="font-size:52px;font-weight:900;letter-spacing:1px;margin-bottom:12px;">Ndi Matsheloni, Vhavenda</h1>
   <p style="font-size:22px;color:var(--text2);max-width:700px;margin:0 auto;">Music. Culture. Present.</p>
 </div>
@@ -142,7 +142,7 @@ body {
   <div style="font-size:38px;width:52px;">🪘</div>
   <div style="flex:1;min-width:0;">
     <div id="pb-title" style="font-weight:700;">Ndi Matsheloni</div>
-    <div id="pb-artist" style="color:vartext2);">Una Rams</div>
+    <div id="pb-artist" style="color:var(--text2);">Una Rams</div>
   </div>
   <button onclick="togglePlay()" style="width:58px;height:58px;border-radius:50%;background:var(--red);color:white;border:none;font-size:26px;cursor:pointer;">▶</button>
   <div style="flex:1;height:5px;background:rgba(255,255,255,.2);border-radius:999px;position:relative;cursor:pointer;" onclick="seek(event)">
@@ -195,7 +195,7 @@ function playTrack(i){
   document.getElementById('pb-artist').textContent = s.artist;
 }
 
-function togglePlay(){ alert("▶ Music playing (demo)"); }
+function togglePlay(){ alert("▶ Music playing (demo version)"); }
 function toggleTheme(){
   const html = document.documentElement;
   const next = html.getAttribute('data-theme') === 'night' ? 'day' : 'night';
@@ -203,11 +203,6 @@ function toggleTheme(){
   alert(next === 'day' ? '☀️ Light Mode' : '🌙 Night Mode');
 }
 function seek(){ alert("Progress updated"); }
-
-// Subtle time-based backdrop adjustment (very light)
-setInterval(() => {
-  document.documentElement.style.setProperty('--glass', 'rgba(255,255,255,0.085)');
-}, 45000);
 
 // Initialize
 document.addEventListener('DOMContentLoaded', () => {
