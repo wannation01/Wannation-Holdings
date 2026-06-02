@@ -2,51 +2,51 @@
 <html lang="en" data-theme="night">
 <head>
 <meta charset="UTF-8">
-<title>Mudi wa Venda — The Living Home of Vhavenda</title>
+<title>Mudi wa Venda — Music & Culture</title>
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Playfair+Display:ital,wght@0,700;1,700&family=Barlow:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 <style>
 :root{
-  --red:#E5000F; --glow:rgba(229,0,15,.65); --accent:#BF5FFF;
-  --bg:#0A0A0F; --card:#12121F; --glass:rgba(255,255,255,.08);
-  --text:#F8F8FA; --text2:rgba(248,248,250,.78);
+  --red:#E5000F; --glow:rgba(229,0,15,.7); --accent:#BF5FFF;
+  --bg:#0A0A0F; --card:#12121F; --glass:rgba(255,255,255,.09);
+  --text:#F8F8FA; --text2:rgba(248,248,250,.8);
 }
 * {margin:0;padding:0;box-sizing:border-box;}
 body {background:var(--bg);color:var(--text);font-family:'Barlow',sans-serif;overflow-x:hidden;}
 .gl {background:var(--glass);backdrop-filter:blur(40px);border:1px solid rgba(255,255,255,.12);border-radius:20px;}
 
-/* Apple Music Style Cards */
+/* Apple Music Style */
 .mcard {
   background:var(--card); border-radius:16px; overflow:hidden; cursor:pointer;
   transition:all .4s cubic-bezier(0.23,1,0.32,1);
 }
-.mcard:hover {transform:translateY(-14px) scale(1.04); box-shadow:0 30px 70px -15px var(--glow);}
-.mart {aspect-ratio:1; position:relative; background:#1a0015; display:flex;align-items:center;justify-content:center;font-size:78px;}
+.mcard:hover {transform:translateY(-12px) scale(1.05); box-shadow:0 35px 70px -15px var(--glow);}
+.mart {aspect-ratio:1; position:relative; background:#1a0015; display:flex;align-items:center;justify-content:center;font-size:82px;}
 .mplay {
   position:absolute; top:50%; left:50%; transform:translate(-50%,-50%) scale(0.75);
-  width:76px; height:76px; background:var(--red); border-radius:50%;
-  display:flex; align-items:center; justify-content:center; font-size:30px; color:white;
-  opacity:0; transition:all .35s; box-shadow:0 0 50px var(--glow);
+  width:78px; height:78px; background:var(--red); border-radius:50%;
+  display:flex; align-items:center; justify-content:center; font-size:32px; color:white;
+  opacity:0; transition:all .35s; box-shadow:0 0 55px var(--glow);
 }
 .mcard:hover .mplay {opacity:1; transform:translate(-50%,-50%) scale(1);}
 
-/* Bottom Player */
 .player {
-  position:fixed; bottom:0; left:0; right:0; z-index:1000; height:86px;
-  background:rgba(10,10,15,.98); backdrop-filter:blur(50px);
-  border-top:1px solid rgba(229,0,15,.4); display:flex; align-items:center; gap:24px;
+  position:fixed; bottom:0; left:0; right:0; z-index:1000; height:88px;
+  background:rgba(10,10,15,.98); backdrop-filter:blur(60px);
+  border-top:1px solid rgba(229,0,15,.45); display:flex; align-items:center; gap:24px;
   padding:0 32px; transform:translateY(100%); transition:transform .45s cubic-bezier(0.32,0.72,0,1);
 }
 .player.on {transform:translateY(0);}
-.pb-prog {flex:1; height:5px; background:rgba(255,255,255,.18); border-radius:999px; position:relative; cursor:pointer;}
-.pb-fill {height:100%; background:linear-gradient(90deg,var(--red),var(--accent)); width:62%;}
+.pb-prog {flex:1; height:5px; background:rgba(255,255,255,.2); border-radius:999px; position:relative; cursor:pointer;}
+.pb-fill {height:100%; background:linear-gradient(90deg,var(--red),var(--accent)); width:58%;}
 .waveform {display:flex; gap:3px; align-items:flex-end; height:16px; opacity:0.9;}
-.bar {width:4px; background:var(--red); animation:wave 1.05s infinite ease-in-out;}
+.bar {width:4px; background:var(--red); animation:wave 1s infinite ease-in-out;}
+@keyframes wave {0%,100%{height:30%} 50%{height:90%}}
 </style>
 </head>
 <body>
 
-<!-- Navigation -->
+<!-- Top Nav -->
 <nav style="position:sticky;top:0;z-index:50;background:rgba(10,10,15,.96);backdrop-filter:blur(30px);padding:16px 32px;display:flex;align-items:center;justify-content:space-between;border-bottom:1px solid rgba(229,0,15,.3);">
   <div style="display:flex;align-items:center;gap:16px;">
     <span style="font-size:38px;">🪘</span>
@@ -59,65 +59,60 @@ body {background:var(--bg);color:var(--text);font-family:'Barlow',sans-serif;ove
 </nav>
 
 <!-- Hero -->
-<div style="padding:80px 32px 60px;text-align:center;background:linear-gradient(to bottom,#1a0015,#0A0A0F);">
-  <h1 style="font-size:58px;font-weight:900;letter-spacing:1px;margin-bottom:16px;">Ndi Matsheloni, Vhavenda</h1>
-  <p style="font-size:24px;color:var(--text2);max-width:720px;margin:0 auto;">Music, stories and culture from our people — alive today.</p>
+<div style="padding:90px 32px 70px;text-align:center;background:linear-gradient(to bottom,#1a0015,#0A0A0F);">
+  <h1 style="font-size:56px;font-weight:900;letter-spacing:1px;margin-bottom:16px;">Ndi Matsheloni, Vhavenda</h1>
+  <p style="font-size:23px;color:var(--text2);max-width:720px;margin:0 auto;">Music, stories & culture from our people — right now.</p>
 </div>
 
-<!-- Today's Fresh Updates -->
+<!-- Today's Venda -->
 <div style="max-width:1380px;margin:0 auto;padding:0 32px 60px;">
   <h2 style="font-size:32px;margin-bottom:24px;color:var(--red);">Today's Venda • Fresh</h2>
   <div id="news-feed" style="display:grid;grid-template-columns:repeat(auto-fit,minmax(380px,1fr));gap:28px;"></div>
 </div>
 
-<!-- Music Library -->
-<div style="max-width:1380px;margin:0 auto;padding:0 32px 80px;">
-  <h2 style="font-size:32px;margin-bottom:24px;">Music from Our Artists</h2>
-  <div id="music-grid" style="display:grid;grid-template-columns:repeat(auto-fill,minmax(180px,1fr));gap:24px;"></div>
+<!-- Music -->
+<div style="max-width:1380px;margin:0 auto;padding:0 32px 100px;">
+  <h2 style="font-size:32px;margin-bottom:24px;">From Our Artists</h2>
+  <div id="music-grid" style="display:grid;grid-template-columns:repeat(auto-fill,minmax(190px,1fr));gap:28px;"></div>
 </div>
 
-<!-- Apple Music Style Player -->
+<!-- Player -->
 <div id="player" class="player">
   <div style="font-size:42px;width:60px;">🪘</div>
   <div style="flex:1;min-width:0;">
-    <div id="pb-title" style="font-weight:700;font-size:15px;">Ndi Matsheloni</div>
+    <div id="pb-title" style="font-weight:700;font-size:15.5px;">Ndi Matsheloni</div>
     <div id="pb-artist" style="color:var(--text2);font-size:13.5px;">Una Rams</div>
   </div>
-  <button onclick="togglePlay()" style="width:62px;height:62px;border-radius:50%;background:var(--red);color:white;border:none;font-size:26px;cursor:pointer;box-shadow:0 0 30px var(--glow);">▶</button>
-  <div style="flex:1;height:5px;background:rgba(255,255,255,.18);border-radius:999px;position:relative;cursor:pointer;" onclick="seek(event)">
+  <button onclick="togglePlay()" style="width:64px;height:64px;border-radius:50%;background:var(--red);color:white;border:none;font-size:28px;cursor:pointer;box-shadow:0 0 35px var(--glow);">▶</button>
+  <div style="flex:1;height:5px;background:rgba(255,255,255,.2);border-radius:999px;position:relative;cursor:pointer;" onclick="seek(event)">
     <div id="pb-fill" class="pb-fill"></div>
-    <div class="waveform" style="position:absolute;top:-5px;right:8px;">
-      <div class="bar" style="height:35%;"></div>
-      <div class="bar" style="height:75%;"></div>
-      <div class="bar" style="height:50%;"></div>
-      <div class="bar" style="height:90%;"></div>
+    <div class="waveform" style="position:absolute;top:-6px;right:12px;">
+      <div class="bar"></div><div class="bar"></div><div class="bar"></div><div class="bar"></div>
     </div>
   </div>
 </div>
 
 <script>
-// Real Venda Content
+// Real Content
 const NEWS = [
-  {title:"Dzata Ruins Restoration Project Advances", desc:"Youth and elders unite to preserve our ancestral heritage site.", time:"This morning", cat:"Heritage"},
-  {title:"Una Rams Drops New Single 'Ndi Matsheloni'", desc:"Celebrating Venda greetings and modern pride.", time:"2h ago", cat:"Music"},
-  {title:"Domba Season Preparations Underway", desc:"Young women prepare for the sacred Python Dance at Lake Fundudzi.", time:"Yesterday", cat:"Culture"},
-  {title:"Venda Artists Leading New Wave in Limpopo", desc:"Mizo Phyll, VP Talking Muimbi and more rising voices.", time:"Today", cat:"Community"}
+  {title:"Dzata Ruins Restoration Advances", desc:"Our youth and elders working together to preserve ancestral heritage.", time:"This morning", cat:"Heritage"},
+  {title:"Una Rams Releases 'Ndi Matsheloni'", desc:"Celebrating Venda greetings and modern identity.", time:"2h ago", cat:"Music"},
+  {title:"Domba Preparations Begin", desc:"Young women preparing for the sacred Python Dance.", time:"Yesterday", cat:"Culture"}
 ];
 
 const SONGS = [
-  {title:'Ndi Matsheloni',artist:'Una Rams',plays:'248K'},
-  {title:'Venda Nights',artist:'DJ Thohoyandou',plays:'142K'},
-  {title:'Dzata Calling',artist:'VP Talking Muimbi',plays:'187K'},
-  {title:'Thohoyandou Flow',artist:'Mizo Phyll',plays:'98K'},
-  {title:'Mudi wa Venda',artist:'Rising Voices',plays:'65K'}
+  {title:'Ndi Matsheloni',artist:'Una Rams'},
+  {title:'Venda Nights',artist:'DJ Thohoyandou'},
+  {title:'Dzata Calling',artist:'VP Talking Muimbi'},
+  {title:'Thohoyandou Flow',artist:'Mizo Phyll'}
 ];
 
 function renderNews(){
   document.getElementById('news-feed').innerHTML = NEWS.map(n => `
-    <div class="gl" style="padding:28px;cursor:pointer;" onclick="alert('📖 ${n.title}\\n\\n${n.desc}\\n\\nMudi wa Venda — Present Tense')">
+    <div class="gl" style="padding:28px;cursor:pointer;" onclick="alert('${n.title}\\n\\n${n.desc}\\n\\nMudi wa Venda')">
       <div style="color:var(--red);font-size:13px;font-weight:700;">${n.cat} • ${n.time}</div>
       <div style="font-size:21px;font-weight:700;margin:14px 0 10px;">${n.title}</div>
-      <div style="color:var(--text2);line-height:1.5;">${n.desc}</div>
+      <div style="color:var(--text2);">${n.desc}</div>
     </div>
   `).join('');
 }
@@ -126,10 +121,9 @@ function renderMusic(){
   document.getElementById('music-grid').innerHTML = SONGS.map((s,i) => `
     <div class="mcard" onclick="playTrack(${i})">
       <div class="mart">🪘</div>
-      <div style="padding:18px;">
-        <div style="font-weight:700;font-size:15.5px;">${s.title}</div>
-        <div style="color:var(--text2);margin-top:4px;">${s.artist}</div>
-        <div style="color:var(--red);font-size:13px;margin-top:8px;">▶ ${s.plays}</div>
+      <div style="padding:20px;">
+        <div style="font-weight:700;font-size:16px;">${s.title}</div>
+        <div style="color:var(--text2);margin-top:6px;">${s.artist}</div>
       </div>
     </div>
   `).join('');
@@ -141,24 +135,18 @@ function playTrack(i){
   document.getElementById('player').classList.add('on');
   document.getElementById('pb-title').textContent = s.title;
   document.getElementById('pb-artist').textContent = s.artist;
-  isPlaying = true;
 }
 
-function togglePlay(){
-  isPlaying = !isPlaying;
-  alert(isPlaying ? "▶ Now Playing..." : "⏸ Paused");
-}
-
+function togglePlay(){ alert("▶ Music player demo — real audio coming soon"); }
 function toggleTheme(){
   const html = document.documentElement;
   const next = html.getAttribute('data-theme') === 'night' ? 'day' : 'night';
   html.setAttribute('data-theme', next);
-  alert(next === 'day' ? '☀️ Light Mode' : '🌙 Dark Mode');
+  alert(next === 'day' ? '☀️ Light Mode' : '🌙 Night Mode');
 }
+function seek(){ alert("Progress updated"); }
 
-function seek(){ alert("Progress updated — full player coming soon"); }
-
-// Initialize
+// Init
 document.addEventListener('DOMContentLoaded', () => {
   renderNews();
   renderMusic();
