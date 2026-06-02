@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Login — WANnation Media</title>
+<link rel="icon" href="Untitled design.png">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+* {margin:0;padding:0;box-sizing:border-box;}
+body {
+  background: #000; color: #fff; font-family: 'Inter', sans-serif;
+  min-height: 100vh; display: flex; align-items: center; justify-content: center;
+}
+.login-container {
+  background: #1C1C1E; border-radius: 24px; padding: 48px;
+  width: 100%; max-width: 420px; border: 1px solid rgba(255,255,255,0.1);
+}
+.logo { text-align: center; font-size: 64px; margin-bottom: 16px; }
+.title { text-align: center; font-size: 28px; font-weight: 800; margin-bottom: 8px; }
+.subtitle { text-align: center; color: rgba(255,255,255,0.7); margin-bottom: 32px; }
+.form-group { margin-bottom: 20px; }
+.label { display: block; font-weight: 600; margin-bottom: 8px; font-size: 14px; }
+.input {
+  width: 100%; padding: 14px 16px; border-radius: 12px;
+  border: 1px solid rgba(255,255,255,0.2); background: rgba(255,255,255,0.05);
+  color: #fff; font-size: 16px;
+}
+.input:focus { outline: none; border-color: #E5000F; }
+.btn {
+  width: 100%; padding: 16px; border-radius: 12px; border: none;
+  background: #E5000F; color: #fff; font-size: 16px; font-weight: 700;
+  cursor: pointer; margin-top: 12px;
+}
+.links { text-align: center; margin-top: 20px; }
+.links a { color: #E5000F; text-decoration: none; font-size: 14px; }
+.kill-switch {
+  margin-top: 40px; padding: 20px; background: rgba(229,0,15,0.1);
+  border-radius: 12px; border: 1px solid rgba(229,0,15,0.3);
+}
+.kill-switch h3 { font-size: 14px; margin-bottom: 12px; color: #E5000F; }
+</style>
+</head>
+<body>
+
+<div class="login-container">
+  <div class="logo">🪘</div>
+  <div class="title">Welcome Back</div>
+  <div class="subtitle">Sign in to WANnation Media</div>
+  
+  <form onsubmit="handleLogin(event)">
+    <div class="form-group">
+      <label class="label">Email</label>
+      <input type="email" class="input" required placeholder="you@example.com">
+    </div>
+    
+    <div class="form-group">
+      <label class="label">Password</label>
+      <input type="password" class="input" required placeholder="••••••••">
+    </div>
+    
+    <button type="submit" class="btn">Sign In</button>
+  </form>
+  
+  <div class="links">
+    <a href="#">Forgot password?</a> | <a href="#">Create account</a>
+  </div>
+  
+  <div class="kill-switch">
+    <h3>🔴 ADMIN KILL SWITCH</h3>
+    <input type="password" id="kill-code" placeholder="Enter kill code" style="width: 100%; padding: 10px; border-radius: 8px; border: 1px solid #333; background: #000; color: #fff; margin-bottom: 10px;">
+    <button onclick="activateKillSwitch()" style="width: 100%; padding: 10px; background: #E5000F; color: #fff; border: none; border-radius: 8px; font-weight: 700; cursor: pointer;">ACTIVATE KILL SWITCH</button>
+    <p id="kill-status" style="text-align: center; margin-top: 10px; font-size: 12px; color: #E5000F;"></p>
+  </div>
+</div>
+
+<script>
+function handleLogin(e) {
+  e.preventDefault();
+  const email = e.target[0].value;
+  
+  if(email === 'admin@wannation.co.za') {
+    localStorage.setItem('wannation-admin', 'true');
+    window.location.href = 'index.html';
+  } else {
+    localStorage.setItem('wannation-user', 'true');
+    window.location.href = 'index.html';
+  }
+}
+
+function activateKillSwitch() {
+  const code = document.getElementById('kill-code').value;
+  if(code === 'WANNATION2026') {
+    document.getElementById('kill-status').textContent = '🔴 SITE OFFLINE - Kill switch activated';
+    localStorage.setItem('wannation-offline', 'true');
+    setTimeout(() => {
+      document.body.innerHTML = '<div style="display:flex;align-items:center;justify-content:center;min-height:100vh;background:#000;color:#fff;text-align:center;"><div><h1 style="font-size:48px;margin-bottom:16px;">🔴 Site Offline</h1><p>WANnation Media is currently unavailable.</p></div></div>';
+    }, 2000);
+  } else {
+    document.getElementById('kill-status').textContent = '❌ Invalid kill code';
+  }
+}
+
+if(localStorage.getItem('wannation-offline') === 'true') {
+  document.body.innerHTML = '<div style="display:flex;align-items:center;justify-content:center;min-height:100vh;background:#000;color:#fff;text-align:center;"><div><h1 style="font-size:48px;margin-bottom:16px;">🔴 Site Offline</h1><p>WANnation Media is currently unavailable.</p></div></div>';
+}
+</script>
+
+</body>
+</html>
