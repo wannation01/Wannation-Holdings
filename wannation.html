@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>WANnation | The Digital Infrastructure of Venda</title>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+:root{--primary:#E5000F;--primary-dark:#b3000b;--gold:#FFD700;--venda-green:#009B3A;--venda-blue:#00A3E0;--bg:#000000;--bg-card:#0a0a0a;--glass:rgba(255,255,255,0.03);--glass-border:rgba(255,255,255,0.08);--text:#FFFFFF;--text-secondary:#888888}
+body{font-family:'Inter',sans-serif;background:#000;color:var(--text);overflow-x:hidden;line-height:1.6}
+.animated-bg{position:fixed;top:0;left:0;width:100%;height:100%;z-index:-3}
+.venda-flag{position:absolute;width:100%;opacity:0.08}
+.flag-black{height:33%;top:0;background:linear-gradient(180deg,#000,transparent)}
+.flag-green{height:34%;top:33%;background:linear-gradient(180deg,#009B3A,transparent)}
+.flag-blue{height:33%;bottom:0;background:linear-gradient(180deg,#00A3E0,transparent)}
+.flag-red{position:absolute;top:0;left:0;width:8%;height:100%;background:linear-gradient(90deg,var(--primary),transparent);opacity:0.15}
+.gradient-orb{position:absolute;border-radius:50%;filter:blur(180px);opacity:0.4;animation:float 25s infinite ease-in-out}
+.orb-1{width:800px;height:800px;background:radial-gradient(circle,var(--primary),transparent);top:-350px;left:-300px}
+.orb-2{width:700px;height:700px;background:radial-gradient(circle,var(--venda-green),transparent);top:50%;right:-250px;animation-delay:-8s}
+.orb-3{width:750px;height:750px;background:radial-gradient(circle,var(--venda-blue),transparent);bottom:-300px;left:35%;animation-delay:-16s}
+.gold-orb{width:500px;height:500px;background:radial-gradient(circle,var(--gold),transparent);top:20%;left:50%;transform:translateX(-50%);opacity:0.2;animation:pulse 8s infinite}
+@keyframes float{0%,100%{transform:translate(0,0)}25%{transform:translate(100px,-100px)}50%{transform:translate(-50px,150px)}75%{transform:translate(-100px,-50px)}}
+@keyframes pulse{0%,100%{opacity:0.2}50%{opacity:0.3}}
+nav{position:fixed;top:0;width:100%;background:rgba(0,0,0,0.85);backdrop-filter:saturate(180%) blur(40px);z-index:10000;border-bottom:1px solid var(--glass-border)}
+.nav-content{max-width:1400px;margin:0 auto;padding:0 40px;height:64px;display:flex;align-items:center;justify-content:space-between}
+.logo{font-size:24px;font-weight:900;background:linear-gradient(135deg,var(--primary),var(--gold));-webkit-background-clip:text;-webkit-text-fill-color:transparent;cursor:pointer;letter-spacing:-1px}
+.logo span{color:var(--gold)}
+.nav-links{display:flex;gap:36px}
+.nav-links a{color:var(--text-secondary);text-decoration:none;font-size:14px;font-weight:500;transition:all 0.3s;padding:10px 16px;border-radius:12px}
+.nav-links a:hover{color:var(--text);background:var(--glass)}
+.nav-cta{background:linear-gradient(135deg,var(--primary),var(--primary-dark));color:#fff;padding:10px 24px;border-radius:12px;font-weight:600;text-decoration:none;transition:all 0.3s}
+.nav-cta:hover{transform:translateY(-2px);box-shadow:0 8px 24px rgba(229,0,15,0.4)}
+.hero{min-height:100vh;display:flex;flex-direction:column;justify-content:center;align-items:center;text-align:center;padding:140px 20px 100px;position:relative}
+.hero-badge{display:inline-block;padding:10px 24px;background:var(--glass);border:1px solid var(--glass-border);border-radius:980px;font-size:13px;font-weight:600;color:var(--gold);margin-bottom:32px;backdrop-filter:blur(10px)}
+.hero h1{font-size:84px;font-weight:900;margin-bottom:24px;line-height:1.05;background:linear-gradient(135deg,#fff 0%,#ccc 50%,var(--primary) 100%);-webkit-background-clip:text;-webkit-text-fill-color:transparent;letter-spacing:-2px;animation:heroTitle 2s ease-out}
+@keyframes heroTitle{from{opacity:0;transform:translateY(40px)}to{opacity:1;transform:translateY(0)}}
+.hero h1 .highlight{background:linear-gradient(135deg,var(--primary),var(--gold));-webkit-background-clip:text;-webkit-text-fill-color:transparent}
+.hero-subtitle{font-size:32px;color:var(--text-secondary);margin-bottom:48px;max-width:900px;line-height:1.5;font-weight:300}
+.hero-description{font-size:18px;color:var(--text-secondary);margin-bottom:60px;max-width:700px;line-height:1.8}
+.hero-buttons{display:flex;gap:20px;justify-content:center;flex-wrap:wrap;margin-bottom:80px}
+.btn{padding:18px 40px;border-radius:16px;font-size:17px;font-weight:700;text-decoration:none;transition:all 0.4s;display:inline-block;cursor:pointer;border:none}
+.btn-primary{background:linear-gradient(135deg,var(--primary),#ff3344);color:#fff;box-shadow:0 12px 40px rgba(229,0,15,0.4)}
+.btn-primary:hover{transform:translateY(-4px);box-shadow:0 20px 60px rgba(229,0,15,0.6)}
+.btn-secondary{background:var(--glass);color:var(--text);border:1px solid var(--glass-border);backdrop-filter:blur(10px)}
+.btn-secondary:hover{background:var(--glass-border);transform:translateY(-4px)}
+.stats{display:flex;gap:40px;margin:60px 0;flex-wrap:wrap;justify-content:center;max-width:1000px}
+.stat{text-align:center;padding:40px 50px;background:var(--glass);border:1px solid var(--glass-border);border-radius:28px;backdrop-filter:blur(40px);transition:all 0.5s;min-width:220px;position:relative;overflow:hidden}
+.stat::before{content:'';position:absolute;top:0;left:0;width:100%;height:100%;background:linear-gradient(135deg,rgba(229,0,15,0.1),transparent);opacity:0;transition:opacity 0.5s}
+.stat:hover{transform:translateY(-12px);border-color:var(--primary);box-shadow:0 24px 60px rgba(229,0,15,0.3)}
+.stat:hover::before{opacity:1}
+.stat-icon{font-size:48px;margin-bottom:16px;display:block}
+.stat-value{font-size:64px;font-weight:900;background:linear-gradient(135deg,var(--primary),var(--gold));-webkit-background-clip:text;-webkit-text-fill-color:transparent;margin-bottom:12px;line-height:1}
+.stat-label{font-size:15px;color:var(--text-secondary);font-weight:600;text-transform:uppercase;letter-spacing:1.5px}
+.vessel-section{padding:140px 20px;position:relative;background:linear-gradient(180deg,#000 0%,#0a0a0a 100%)}
+.container{max-width:1300px;margin:0 auto;padding:0 20px}
+.section-header{text-align:center;margin-bottom:100px}
+.section-tag{display:inline-block;padding:8px 20px;background:var(--glass);border:1px solid var(--glass-border);border-radius:980px;font-size:12px;font-weight:700;color:var(--primary);margin-bottom:20px;letter-spacing:1px;text-transform:uppercase}
+.section-header h2{font-size:64px;font-weight:900;margin-bottom:24px;background:linear-gradient(135deg,#fff,var(--text-secondary));-webkit-background-clip:text;-webkit-text-fill-color:transparent;letter-spacing:-1.5px}
+.section-header p{font-size:22px;color:var(--text-secondary);max-width:700px;margin:0 auto;line-height:1.6}
+.pillars-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:32px;margin-top:60px}
+@media(max-width:1200px){.pillars-grid{grid-template-columns:repeat(2,1fr)}}
+@media(max-width:768px){.hero h1{font-size:48px}.hero-subtitle{font-size:24px}.section-header h2{font-size:40px}.pillars-grid{grid-template-columns:1fr}.stats{flex-direction:column;align-items:center}}
+.pillar-card{background:var(--bg-card);border:1px solid var(--glass-border);border-radius:32px;padding:48px 32px;transition:all 0.5s;position:relative;overflow:hidden;group:hover}
+.pillar-card::before{content:'';position:absolute;top:0;left:0;width:100%;height:100%;background:linear-gradient(135deg,rgba(229,0,15,0.15),transparent);opacity:0;transition:opacity 0.5s}
+.pillar-card:hover{transform:translateY(-16px);border-color:var(--primary);box-shadow:0 32px 80px rgba(229,0,15,0.3)}
+.pillar-card:hover::before{opacity:1}
+.pillar-icon{font-size:56px;margin-bottom:24px;display:block}
+.pillar-card h3{font-size:28px;font-weight:800;margin-bottom:16px;color:var(--text)}
+.pillar-card p{font-size:16px;color:var(--text-secondary);line-height:1.7;margin-bottom:20px}
+.pillar-link{color:var(--primary);font-weight:600;text-decoration:none;display:flex;align-items:center;gap:8px;transition:gap 0.3s}
+.pillar-link:hover{gap:16px}
+.civilization-section{padding:140px 20px;background:#000;position:relative}
+.civilization-grid{display:grid;grid-template-columns:1.2fr 0.8fr;gap:80px;align-items:center}
+@media(max-width:1024px){.civilization-grid{grid-template-columns:1fr}}
+.civilization-content h2{font-size:56px;font-weight:900;margin-bottom:24px;line-height:1.1}
+.civilization-content h2 .venda{background:linear-gradient(135deg,var(--venda-green),var(--venda-blue));-webkit-background-clip:text;-webkit-text-fill-color:transparent}
+.civilization-content .subtitle{font-size:24px;color:var(--text-secondary);margin-bottom:32px;font-weight:300}
+.civilization-content p{font-size:18px;color:var(--text-secondary);line-height:1.8;margin-bottom:24px}
+.civilization-features{list-style:none;margin:40px 0}
+.civilization-features li{padding:16px 0;border-bottom:1px solid var(--glass-border);display:flex;align-items:center;gap:16px;font-size:16px;color:var(--text-secondary)}
+.civilization-features li:before{content:'✓';color:var(--primary);font-weight:900;font-size:20px}
+.civilization-image{background:linear-gradient(135deg,var(--primary),var(--venda-green),var(--venda-blue));border-radius:32px;height:500px;display:flex;align-items:center;justify-content:center;font-size:140px;position:relative;overflow:hidden}
+.civilization-image::after{content:'';position:absolute;top:-50%;left:-50%;width:200%;height:200%;background:linear-gradient(45deg,transparent,rgba(255,255,255,0.1),transparent);animation:shimmer 3s infinite}
+@keyframes shimmer{0%{transform:translateX(-100%)}100%{transform:translateX(100%)}}
+footer{padding:80px 20px;background:#0a0a0a;border-top:1px solid var(--glass-border);position:relative}
+.footer-content{max-width:1400px;margin:0 auto;display:grid;grid-template-columns:2fr 1fr 1fr 1fr;gap:60px}
+@media(max-width:1024px){.footer-content{grid-template-columns:1fr}}
+.footer-brand .logo{font-size:32px;margin-bottom:20px;display:block}
+.footer-brand p{color:var(--text-secondary);font-size:15px;line-height:1.7;margin-bottom:24px}
+.footer-col h4{font-size:16px;font-weight:700;margin-bottom:24px;color:var(--text)}
+.footer-col a{display:block;color:var(--text-secondary);text-decoration:none;font-size:14px;padding:8px 0;transition:color 0.3s}
+.footer-col a:hover{color:var(--primary)}
+.copyright{text-align:center;color:var(--text-secondary);font-size:13px;padding-top:40px;margin-top:60px;border-top:1px solid var(--glass-border)}
+</style>
+</head>
+<body>
+
+<div class="animated-bg">
+<div class="venda-flag flag-black"></div>
+<div class="venda-flag flag-green"></div>
+<div class="venda-flag flag-blue"></div>
+<div class="flag-red"></div>
+<div class="gradient-orb orb-1"></div>
+<div class="gradient-orb orb-2"></div>
+<div class="gradient-orb orb-3"></div>
+<div class="gradient-orb gold-orb"></div>
+</div>
+
+<nav>
+<div class="nav-content">
+<div class="logo">WAN<span>nation</span></div>
+<div class="nav-links">
+<a href="#media">Media</a>
+<a href="#community">Community</a>
+<a href="#commerce">Commerce</a>
+<a href="#culture">Culture</a>
+<a href="#technology">Technology</a>
+</div>
+<a href="#premium" class="nav-cta">Get Premium R49</a>
+</div>
+</nav>
+
+<section class="hero">
+<div class="hero-badge">🏛️ Built for Venda, By Venda</div>
+<h1>The Digital <span class="highlight">Infrastructure</span><br>of a <span class="highlight">Civilization</span></h1>
+<p class="hero-subtitle">Not just a platform. The digital home of 1.2 million Venda people.</p>
+<p class="hero-description">Creator-owned. Community-powered. Built specifically for the Venda people of Limpopo, South Africa - in your language, celebrating your culture, paying your artists.</p>
+<div class="hero-buttons">
+<a href="#explore" class="btn btn-primary">🚀 Explore WANnation</a>
+<a href="#premium" class="btn btn-secondary">💎 Get Premium - R49/month</a>
+</div>
+<div class="stats">
+<div class="stat"><div class="stat-icon">🎵</div><div class="stat-value">20+</div><div class="stat-label">Venda Artists</div></div>
+<div class="stat"><div class="stat-icon">📰</div><div class="stat-value">24</div><div class="stat-label">News Daily</div></div>
+<div class="stat"><div class="stat-icon">💼</div><div class="stat-value">16+</div><div class="stat-label">Jobs Listed</div></div>
+<div class="stat"><div class="stat-icon">🛡️</div><div class="stat-value">100%</div><div class="stat-label">Secure</div></div>
+</div>
+</section>
+
+<section class="vessel-section">
+<div class="container">
+<div class="section-header">
+<div class="section-tag">What We Offer</div>
+<h2>Complete Digital<br>Ecosystem</h2>
+<p>Everything your community needs - music, news, jobs, business, culture, and more.</p>
+</div>
+<div class="pillars-grid">
+<div class="pillar-card">
+<div class="pillar-icon">🎵</div>
+<h3>Music Streaming</h3>
+<p>Venda artists get paid. Stream and download music that celebrates our culture.</p>
+<a href="#music" class="pillar-link">Listen Now →</a>
+</div>
+<div class="pillar-card">
+<div class="pillar-icon">📰</div>
+<h3>News & Articles</h3>
+<p>In Tshivenda + 5 languages. Stories nobody else covers.</p>
+<a href="#news" class="pillar-link">Read More →</a>
+</div>
+<div class="pillar-card">
+<div class="pillar-icon">💼</div>
+<h3>Jobs Board</h3>
+<p>Opportunities in Vhembe & Limpopo. Scholarships too.</p>
+<a href="#jobs" class="pillar-link">Find Jobs →</a>
+</div>
+<div class="pillar-card">
+<div class="pillar-icon">🏢</div>
+<h3>Business Directory</h3>
+<p>Local Vhembe businesses. Grow your network.</p>
+<a href="#business" class="pillar-link">Explore →</a>
+</div>
+</div>
+</div>
+</section>
+
+<section class="civilization-section">
+<div class="container">
+<div class="civilization-grid">
+<div class="civilization-content">
+<h2>Not a Streaming App.<br><span class="venda">A Civilization.</span></h2>
+<div class="subtitle">Creator-owned digital media house built specifically for Venda people</div>
+<p>WANnation sits at the centre of a community that has never had a dedicated digital platform built in their language, celebrating their culture, paying their artists, and covering their stories.</p>
+<ul class="civilization-features">
+<li>Music streaming that pays Venda artists</li>
+<li>News in Tshivenda + 5 other languages</li>
+<li>Community chat rooms & discussions</li>
+<li>Local business directory</li>
+<li>Tshivenda cultural archive</li>
+<li>AI assistant (WanAI)</li>
+</ul>
+<a href="#learn-more" class="btn btn-primary">Discover More</a>
+</div>
+<div class="civilization-image">🏛️</div>
+</div>
+</div>
+</section>
+
+<footer>
+<div class="footer-content">
+<div class="footer-brand">
+<div class="logo">WAN<span>nation</span></div>
+<p>The digital infrastructure of Venda. Creator-owned. Community-powered. Built for 1.2 million people.</p>
+</div>
+<div class="footer-col">
+<h4>Platform</h4>
+<a href="#music">Music</a>
+<a href="#news">News</a>
+<a href="#jobs">Jobs</a>
+<a href="#business">Business</a>
+</div>
+<div class="footer-col">
+<h4>Culture</h4>
+<a href="#culture">Archive</a>
+<a href="#language">Tshivenda</a>
+<a href="#heritage">Heritage</a>
+</div>
+<div class="footer-col">
+<h4>Support</h4>
+<a href="#contact">Contact</a>
+<a href="#premium">Premium</a>
+<a href="#help">Help</a>
+</div>
+</div>
+<div class="copyright">
+© 2026 WANnation Media. Creator-owned. Built for Venda. All rights reserved.
+</div>
+</footer>
+
+</body>
+</html>
