@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Artists | WANnation</title>
+<title>Media Kit | WANnation</title>
 <style>
 *{margin:0;padding:0;box-sizing:border-box}
 :root{
@@ -119,13 +119,12 @@ h1{
 }
 @media (max-width:1100px){.grid{grid-template-columns:repeat(2,minmax(0,1fr))}}
 @media (max-width:640px){.grid{grid-template-columns:1fr}}
-.artist-card{
+.package-card{
   position:relative;
   display:block;
   text-decoration:none;
   color:inherit;
   padding:28px;
-  text-align:center;
   border-radius:28px;
   background:linear-gradient(180deg, rgba(255,255,255,.07), rgba(255,255,255,.04));
   border:1px solid var(--border);
@@ -134,7 +133,7 @@ h1{
   transition:.28s ease;
   overflow:hidden;
 }
-.artist-card::before{
+.package-card::before{
   content:"";
   position:absolute;
   inset:0;
@@ -142,37 +141,43 @@ h1{
   opacity:0;
   transition:.28s ease;
 }
-.artist-card:hover{transform:translateY(-6px)}
-.artist-card:hover::before{opacity:1}
-.artist-avatar{
+.package-card:hover{transform:translateY(-6px)}
+.package-card:hover::before{opacity:1}
+.package-icon{
   position:relative;
-  font-size:60px;
+  font-size:40px;
   margin-bottom:18px;
 }
-.artist-card h2{
+.package-card h2{
   position:relative;
-  font-size:22px;
+  font-size:24px;
   letter-spacing:-.03em;
   margin-bottom:8px;
 }
-.artist-genre{
+.package-price{
   position:relative;
-  color:var(--red);
-  font-size:13px;
-  margin-bottom:12px;
-  text-transform:uppercase;
-  letter-spacing:.08em;
+  color:var(--gold);
+  font-size:20px;
+  font-weight:700;
+  margin-bottom:16px;
 }
-.artist-card p{
+.package-card p{
   position:relative;
   color:var(--muted);
   line-height:1.55;
   font-size:14px;
+  margin-bottom:16px;
 }
-.artist-pill{
+.package-features{
+  position:relative;
+  color:var(--muted);
+  font-size:13px;
+  line-height:1.8;
+  margin-bottom:16px;
+}
+.package-pill{
   position:relative;
   display:inline-block;
-  margin-top:16px;
   padding:8px 12px;
   border-radius:999px;
   background:rgba(255,255,255,.08);
@@ -194,70 +199,75 @@ h1{
       <div class="nav-links">
         <a href="index.html">Home</a>
         <a href="news.html">News</a>
-        <a href="podcast.html">Podcast</a>
-        <a href="music.html">Music</a>
+        <a href="artists.html">Artists</a>
         <a href="business.html">Business</a>
       </div>
     </div>
   </nav>
 
   <main class="hero">
-    <span class="badge">🎵 Musicians & Creators</span>
-    <h1>Artists</h1>
-    <p class="subtitle">Discover emerging and established Venda musicians, showcasing profiles, releases, and creative vision.</p>
+    <span class="badge">💼 Advertising & Partnerships</span>
+    <h1>Media Kit</h1>
+    <p class="subtitle">Reach Venda's growing audience through premium ad placements, sponsorships, and branded content packages.</p>
   </main>
 
   <section class="section">
-    <h2 class="section-title">Featured Artists</h2>
-    <p class="section-note">Explore the talent and creativity of Venda's music scene.</p>
+    <h2 class="section-title">Advertising Packages</h2>
+    <p class="section-note">Flexible options for local and international brands looking to connect with Venda audiences.</p>
 
     <div class="grid">
-      <a class="artist-card" href="#">
-        <div class="artist-avatar">🎤</div>
-        <h2>Makhadzi</h2>
-        <div class="artist-genre">Traditional • Pop</div>
-        <p>Award-winning artist blending traditional Venda rhythms with contemporary pop sounds.</p>
-        <span class="artist-pill">View Profile</span>
+      <a class="package-card" href="#">
+        <div class="package-icon">📣</div>
+        <h2>Banner Ads</h2>
+        <div class="package-price">R 2,500/mo</div>
+        <p>Prime placement at top of pages and sidebars.</p>
+        <div class="package-features">✓ Homepage feature<br>✓ 300x250 px<br>✓ 3-month minimum</div>
+        <span class="package-pill">Inquire</span>
       </a>
 
-      <a class="artist-card" href="#">
-        <div class="artist-avatar">🎸</div>
-        <h2>Mizo Phyll</h2>
-        <div class="artist-genre">Hip Hop • Rap</div>
-        <p>Rising hip hop artist breaking streaming records with authentic Venda storytelling.</p>
-        <span class="artist-pill">View Profile</span>
+      <a class="package-card" href="#">
+        <div class="package-icon">⭐</div>
+        <h2>Sponsored Features</h2>
+        <div class="package-price">R 5,000/story</div>
+        <p>Custom branded content and artist spotlights.</p>
+        <div class="package-features">✓ Full article feature<br>✓ Social promotion<br>✓ SEO optimization</div>
+        <span class="package-pill">Inquire</span>
       </a>
 
-      <a class="artist-card" href="#">
-        <div class="artist-avatar">🎹</div>
-        <h2>Mukwevho Sisters</h2>
-        <div class="artist-genre">Gospel • Soul</div>
-        <p>Beloved gospel group with 3-time Gospel Artist of the Year wins.</p>
-        <span class="artist-pill">View Profile</span>
+      <a class="package-card" href="#">
+        <div class="package-icon">🎙️</div>
+        <h2>Podcast Sponsorship</h2>
+        <div class="package-price">R 3,000/episode</div>
+        <p>Brand mentions and ad reads in podcast episodes.</p>
+        <div class="package-features">✓ 30-60 sec read<br>✓ Weekly episodes<br>✓ Social tags</div>
+        <span class="package-pill">Inquire</span>
       </a>
 
-      <a class="artist-card" href="#">
-        <div class="artist-avatar">🥁</div>
-        <h2>King Monada</h2>
-        <div class="artist-genre">Amapiano • Dance</div>
-        <p>Amapiano producer revolutionizing dance music with deep grooves and infectious beats.</p>
-        <span class="artist-pill">View Profile</span>
+      <a class="package-card" href="#">
+        <div class="package-icon">🎵</div>
+        <h2>Artist Promotion</h2>
+        <div class="package-price">R 4,000/artist</div>
+        <p>Featured profile on Artists page with music player.</p>
+        <div class="package-features">✓ Artist page<br>✓ Music embeds<br>✓ Newsletter feature</div>
+        <span class="package-pill">Inquire</span>
       </a>
 
-      <a class="artist-card" href="#">
-        <div class="artist-avatar">🎧</div>
-        <h2>DJ Olimela</h2>
-        <div class="artist-genre">Electronic • Afrobeats</div>
-        <p>Electronic producer fusing Afrobeats with modern production techniques.</p>
-        <span class="artist-pill">View Profile</span>
+      <a class="package-card" href="#">
+        <div class="package-icon">🏢</div>
+        <h2>Business Listing</h2>
+        <div class="package-price">R 1,500/mo</div>
+        <p>Premium listing on Business Directory with contact info.</p>
+        <div class="package-features">✓ Business page<br>✓ 24/7 visibility<br>✓ Contact form</div>
+        <span class="package-pill">Inquire</span>
       </a>
 
-      <a class="artist-card" href="#">
-        <div class="artist-avatar">🎼</div>
-        <h2>Venda Jazz Collective</h2>
-        <div class="artist-genre">Jazz • World Music</div>
-        <p>Innovative jazz ensemble celebrating traditional Venda instrumentation.</p>
-        <span class="artist-pill">View Profile</span>
+      <a class="package-card" href="#">
+        <div class="package-icon">📦</div>
+        <h2>Premium Bundle</h2>
+        <div class="package-price">R 12,000/3mo</div>
+        <p>All-inclusive package combining ads, features, and listings.</p>
+        <div class="package-features">✓ Banners + Featured<br>✓ Podcast mention<br>✓ Newsletter</div>
+        <span class="package-pill">Inquire</span>
       </a>
     </div>
   </section>

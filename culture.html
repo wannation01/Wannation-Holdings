@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Artists | WANnation</title>
+<title>Culture | WANnation</title>
 <style>
 *{margin:0;padding:0;box-sizing:border-box}
 :root{
@@ -114,18 +114,16 @@ h1{
 }
 .grid{
   display:grid;
-  grid-template-columns:repeat(3, minmax(0,1fr));
+  grid-template-columns:repeat(2, minmax(0,1fr));
   gap:18px;
 }
-@media (max-width:1100px){.grid{grid-template-columns:repeat(2,minmax(0,1fr))}}
-@media (max-width:640px){.grid{grid-template-columns:1fr}}
-.artist-card{
+@media (max-width:1100px){.grid{grid-template-columns:1fr}}
+.culture-card{
   position:relative;
   display:block;
   text-decoration:none;
   color:inherit;
   padding:28px;
-  text-align:center;
   border-radius:28px;
   background:linear-gradient(180deg, rgba(255,255,255,.07), rgba(255,255,255,.04));
   border:1px solid var(--border);
@@ -134,7 +132,7 @@ h1{
   transition:.28s ease;
   overflow:hidden;
 }
-.artist-card::before{
+.culture-card::before{
   content:"";
   position:absolute;
   inset:0;
@@ -142,34 +140,26 @@ h1{
   opacity:0;
   transition:.28s ease;
 }
-.artist-card:hover{transform:translateY(-6px)}
-.artist-card:hover::before{opacity:1}
-.artist-avatar{
+.culture-card:hover{transform:translateY(-6px)}
+.culture-card:hover::before{opacity:1}
+.culture-icon{
   position:relative;
-  font-size:60px;
+  font-size:40px;
   margin-bottom:18px;
 }
-.artist-card h2{
+.culture-card h2{
   position:relative;
   font-size:22px;
   letter-spacing:-.03em;
   margin-bottom:8px;
 }
-.artist-genre{
-  position:relative;
-  color:var(--red);
-  font-size:13px;
-  margin-bottom:12px;
-  text-transform:uppercase;
-  letter-spacing:.08em;
-}
-.artist-card p{
+.culture-card p{
   position:relative;
   color:var(--muted);
   line-height:1.55;
   font-size:14px;
 }
-.artist-pill{
+.culture-pill{
   position:relative;
   display:inline-block;
   margin-top:16px;
@@ -194,70 +184,64 @@ h1{
       <div class="nav-links">
         <a href="index.html">Home</a>
         <a href="news.html">News</a>
+        <a href="artists.html">Artists</a>
         <a href="podcast.html">Podcast</a>
         <a href="music.html">Music</a>
-        <a href="business.html">Business</a>
       </div>
     </div>
   </nav>
 
   <main class="hero">
-    <span class="badge">🎵 Musicians & Creators</span>
-    <h1>Artists</h1>
-    <p class="subtitle">Discover emerging and established Venda musicians, showcasing profiles, releases, and creative vision.</p>
+    <span class="badge">🏛️ Heritage & Language</span>
+    <h1>Culture</h1>
+    <p class="subtitle">Explore Venda heritage, Tshivenda language, oral history, and community traditions.</p>
   </main>
 
   <section class="section">
-    <h2 class="section-title">Featured Artists</h2>
-    <p class="section-note">Explore the talent and creativity of Venda's music scene.</p>
+    <h2 class="section-title">Venda Heritage Archive</h2>
+    <p class="section-note">Preserving language, traditions, and history for future generations.</p>
 
     <div class="grid">
-      <a class="artist-card" href="#">
-        <div class="artist-avatar">🎤</div>
-        <h2>Makhadzi</h2>
-        <div class="artist-genre">Traditional • Pop</div>
-        <p>Award-winning artist blending traditional Venda rhythms with contemporary pop sounds.</p>
-        <span class="artist-pill">View Profile</span>
+      <a class="culture-card" href="#">
+        <div class="culture-icon">📚</div>
+        <h2>Tshivenda Language</h2>
+        <p>Learn Tshivenda with audio guides, vocabulary lists, grammar lessons, and cultural context from native speakers.</p>
+        <span class="culture-pill">Learn More</span>
       </a>
 
-      <a class="artist-card" href="#">
-        <div class="artist-avatar">🎸</div>
-        <h2>Mizo Phyll</h2>
-        <div class="artist-genre">Hip Hop • Rap</div>
-        <p>Rising hip hop artist breaking streaming records with authentic Venda storytelling.</p>
-        <span class="artist-pill">View Profile</span>
+      <a class="culture-card" href="#">
+        <div class="culture-icon">🧑‍🎨</div>
+        <h2>Traditional Arts & Crafts</h2>
+        <p>Gallery of traditional Venda art, beadwork, pottery, and handcrafted goods with artist stories.</p>
+        <span class="culture-pill">Explore Gallery</span>
       </a>
 
-      <a class="artist-card" href="#">
-        <div class="artist-avatar">🎹</div>
-        <h2>Mukwevho Sisters</h2>
-        <div class="artist-genre">Gospel • Soul</div>
-        <p>Beloved gospel group with 3-time Gospel Artist of the Year wins.</p>
-        <span class="artist-pill">View Profile</span>
+      <a class="culture-card" href="#">
+        <div class="culture-icon">💃</div>
+        <h2>Dances & Rituals</h2>
+        <p>Video library and descriptions of traditional Venda dances, ceremonies, and their cultural significance.</p>
+        <span class="culture-pill">Watch Videos</span>
       </a>
 
-      <a class="artist-card" href="#">
-        <div class="artist-avatar">🥁</div>
-        <h2>King Monada</h2>
-        <div class="artist-genre">Amapiano • Dance</div>
-        <p>Amapiano producer revolutionizing dance music with deep grooves and infectious beats.</p>
-        <span class="artist-pill">View Profile</span>
+      <a class="culture-card" href="#">
+        <div class="culture-icon">👑</div>
+        <h2>Royal Heritage & Kingdoms</h2>
+        <p>History of Venda kingdoms, chiefs, and genealogies. Stories of leadership and sovereignty.</p>
+        <span class="culture-pill">Read Stories</span>
       </a>
 
-      <a class="artist-card" href="#">
-        <div class="artist-avatar">🎧</div>
-        <h2>DJ Olimela</h2>
-        <div class="artist-genre">Electronic • Afrobeats</div>
-        <p>Electronic producer fusing Afrobeats with modern production techniques.</p>
-        <span class="artist-pill">View Profile</span>
+      <a class="culture-card" href="#">
+        <div class="culture-icon">🍲</div>
+        <h2>Traditional Cuisine</h2>
+        <p>Recipes and food culture: mopane worms, maize porridge, traditional beer, and celebratory feasts.</p>
+        <span class="culture-pill">View Recipes</span>
       </a>
 
-      <a class="artist-card" href="#">
-        <div class="artist-avatar">🎼</div>
-        <h2>Venda Jazz Collective</h2>
-        <div class="artist-genre">Jazz • World Music</div>
-        <p>Innovative jazz ensemble celebrating traditional Venda instrumentation.</p>
-        <span class="artist-pill">View Profile</span>
+      <a class="culture-card" href="#">
+        <div class="culture-icon">📖</div>
+        <h2>Oral Histories & Legends</h2>
+        <p>Archived stories, proverbs, folktales, and wisdom from Venda elders and historians.</p>
+        <span class="culture-pill">Read Archives</span>
       </a>
     </div>
   </section>

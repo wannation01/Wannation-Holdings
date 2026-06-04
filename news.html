@@ -1,207 +1,255 @@
 <!DOCTYPE html>
-<html lang="en" data-theme="night">
+<html lang="en">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>News — WANnation Media</title>
-<link rel="icon" href="Untitled design.png">
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+<title>News | WANnation</title>
 <style>
-* {margin:0;padding:0;box-sizing:border-box;}
-:root {
-  --primary: #E5000F; --primary-glow: rgba(229, 0, 15, 0.5); --secondary: #BF5FFF;
-  --bg: #000000; --bg-card: #1C1C1E; --glass-light: rgba(255, 255, 255, 0.1);
-  --text: #FFFFFF; --text-secondary: rgba(255, 255, 255, 0.7); --border: rgba(255, 255, 255, 0.12);
+*{margin:0;padding:0;box-sizing:border-box}
+:root{
+  --bg:#000;
+  --card:rgba(255,255,255,.06);
+  --border:rgba(255,255,255,.12);
+  --text:#f5f5f7;
+  --muted:#a1a1a6;
+  --red:#e5000f;
+  --gold:#ffd700;
+  --blue:#0071e3;
 }
-[data-theme="day"] {
-  --bg: #FFFFFF; --bg-card: #F2F2F7; --text: #1D1D1F; --text-secondary: rgba(29, 29, 31, 0.7);
+html{scroll-behavior:smooth}
+body{
+  font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Inter,Arial,sans-serif;
+  background:
+    radial-gradient(circle at 15% 10%, rgba(229,0,15,.22), transparent 26%),
+    radial-gradient(circle at 85% 18%, rgba(0,113,227,.20), transparent 24%),
+    radial-gradient(circle at 50% 85%, rgba(255,215,0,.10), transparent 22%),
+    #000;
+  color:var(--text);
+  overflow-x:hidden;
 }
-body { background: var(--bg); color: var(--text); font-family: 'Inter', sans-serif; }
-header { position: sticky; top: 0; z-index: 100; background: rgba(0,0,0,0.8); backdrop-filter: blur(20px); border-bottom: 1px solid var(--border); padding: 12px 20px; }
-[data-theme="day"] header { background: rgba(255,255,255,0.8); }
-.header-content { max-width: 1400px; margin: 0 auto; display: flex; align-items: center; justify-content: space-between; }
-.logo { display: flex; align-items: center; gap: 12px; }
-.logo-title { font-size: 22px; font-weight: 900; }
-.logo-subtitle { font-size: 12px; color: var(--text-secondary); }
-.nav-links { display: flex; gap: 24px; }
-.nav-links a { color: var(--text-secondary); text-decoration: none; font-weight: 500; }
-.nav-links a:hover, .nav-links a.active { color: var(--primary); }
-.nav-actions { display: flex; gap: 12px; align-items: center; }
-.btn { padding: 10px 20px; border-radius: 10px; font-weight: 700; border: none; cursor: pointer; text-decoration: none; }
-.btn-primary { background: var(--primary); color: white; }
-.theme-toggle { width: 40px; height: 40px; border-radius: 50%; background: var(--glass-light); border: 1px solid var(--border); display: flex; align-items: center; justify-content: center; cursor: pointer; font-size: 20px; }
-main { max-width: 1400px; margin: 0 auto; padding: 40px 20px 140px; }
-.page-header { margin-bottom: 40px; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 20px; }
-.page-title { font-size: 48px; font-weight: 900; }
-.page-subtitle { font-size: 20px; color: var(--text-secondary); }
-.news-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(350px, 1fr)); gap: 24px; }
-.news-card {
-  background: var(--bg-card); border-radius: 16px; overflow: hidden;
-  border: 1px solid var(--border); transition: all 0.3s; text-decoration: none; color: inherit;
+.nav{
+  position:sticky;
+  top:0;
+  z-index:1000;
+  backdrop-filter:blur(24px);
+  background:rgba(0,0,0,.58);
+  border-bottom:1px solid rgba(255,255,255,.08);
 }
-.news-card:hover { transform: translateY(-8px); border-color: var(--primary); }
-.news-image {
-  height: 200px; background: linear-gradient(135deg, var(--primary), var(--secondary));
-  background-size: cover; background-position: center;
+.nav-inner{
+  max-width:1200px;
+  margin:0 auto;
+  padding:14px 20px;
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:16px;
 }
-.news-content { padding: 20px; }
-.news-category {
-  background: var(--primary); color: white; padding: 4px 12px;
-  border-radius: 20px; font-size: 12px; font-weight: 700; display: inline-block; margin-bottom: 12px;
+.brand{
+  font-size:20px;
+  font-weight:800;
+  letter-spacing:-.03em;
+  background:linear-gradient(135deg,var(--red),var(--gold));
+  -webkit-background-clip:text;
+  -webkit-text-fill-color:transparent;
+  text-decoration:none;
 }
-.news-title { font-size: 20px; font-weight: 800; margin-bottom: 8px; line-height: 1.3; }
-.news-excerpt { color: var(--text-secondary); font-size: 14px; line-height: 1.6; }
-.news-meta {
-  display: flex; gap: 16px; margin-top: 16px; padding-top: 16px;
-  border-top: 1px solid var(--border); font-size: 13px; color: var(--text-secondary);
+.nav-links{
+  display:flex;
+  gap:18px;
+  flex-wrap:wrap;
 }
-.last-updated {
-  background: rgba(52, 199, 89, 0.1); border: 1px solid #34C759;
-  color: #34C759; padding: 12px 20px; border-radius: 12px; font-size: 14px;
-  display: inline-flex; align-items: center; gap: 8px; font-weight: 600;
+.nav-links a{
+  color:var(--muted);
+  text-decoration:none;
+  font-size:14px;
 }
-@media (max-width: 768px) { .nav-links { display: none; } .page-title { font-size: 32px; } .news-grid { grid-template-columns: 1fr; } }
+.nav-links a:hover{color:#fff}
+.hero{
+  max-width:1200px;
+  margin:0 auto;
+  padding:92px 20px 54px;
+  text-align:center;
+}
+.badge{
+  display:inline-block;
+  padding:10px 18px;
+  border-radius:999px;
+  background:var(--card);
+  border:1px solid var(--border);
+  color:#fff;
+  font-size:13px;
+  backdrop-filter:blur(14px);
+}
+h1{
+  margin-top:22px;
+  font-size:clamp(44px,8vw,84px);
+  line-height:1.02;
+  letter-spacing:-.06em;
+  background:linear-gradient(135deg,#fff 0%,#d7d7da 35%,var(--red) 100%);
+  -webkit-background-clip:text;
+  -webkit-text-fill-color:transparent;
+}
+.subtitle{
+  margin:22px auto 0;
+  max-width:860px;
+  font-size:clamp(18px,2.2vw,28px);
+  line-height:1.55;
+  color:var(--muted);
+}
+.section{
+  max-width:1200px;
+  margin:0 auto;
+  padding:24px 20px 70px;
+}
+.section-title{
+  font-size:28px;
+  letter-spacing:-.04em;
+  margin-bottom:12px;
+}
+.section-note{
+  color:var(--muted);
+  margin-bottom:26px;
+  max-width:760px;
+  line-height:1.6;
+}
+.grid{
+  display:grid;
+  grid-template-columns:repeat(2, minmax(0,1fr));
+  gap:18px;
+}
+@media (max-width:1100px){.grid{grid-template-columns:1fr}}
+.news-card{
+  position:relative;
+  display:block;
+  text-decoration:none;
+  color:inherit;
+  padding:28px;
+  border-radius:28px;
+  background:linear-gradient(180deg, rgba(255,255,255,.07), rgba(255,255,255,.04));
+  border:1px solid var(--border);
+  backdrop-filter:blur(18px);
+  box-shadow:0 20px 60px rgba(0,0,0,.28);
+  transition:.28s ease;
+  overflow:hidden;
+}
+.news-card::before{
+  content:"";
+  position:absolute;
+  inset:0;
+  background:linear-gradient(135deg, rgba(229,0,15,.18), transparent 55%);
+  opacity:0;
+  transition:.28s ease;
+}
+.news-card:hover{transform:translateY(-6px)}
+.news-card:hover::before{opacity:1}
+.news-meta{
+  position:relative;
+  font-size:13px;
+  color:var(--muted);
+  margin-bottom:12px;
+  text-transform:uppercase;
+  letter-spacing:.08em;
+}
+.news-card h2{
+  position:relative;
+  font-size:24px;
+  letter-spacing:-.03em;
+  margin-bottom:12px;
+  line-height:1.35;
+}
+.news-card p{
+  position:relative;
+  color:var(--muted);
+  line-height:1.55;
+  font-size:15px;
+}
+.news-pill{
+  position:relative;
+  display:inline-block;
+  margin-top:16px;
+  padding:8px 12px;
+  border-radius:999px;
+  background:rgba(255,255,255,.08);
+  font-size:13px;
+  color:#fff;
+}
+.footer{
+  padding:26px 20px 40px;
+  text-align:center;
+  color:var(--muted);
+  border-top:1px solid rgba(255,255,255,.08);
+}
 </style>
 </head>
 <body>
-
-<header>
-  <div class="header-content">
-    <div class="logo">
-      <img src="Untitled design.png" alt="WANnation" style="width:40px;height:40px;border-radius:50%;" onerror="this.style.display='none';this.nextElementSibling.style.display='block'">
-      <span style="font-size:32px;display:none;">🪘</span>
-      <div>
-        <div class="logo-title">WANNATION MEDIA</div>
-        <div class="logo-subtitle">The Voice of Venda</div>
+  <nav class="nav">
+    <div class="nav-inner">
+      <a href="index.html" class="brand">WANnation</a>
+      <div class="nav-links">
+        <a href="index.html">Home</a>
+        <a href="artists.html">Artists</a>
+        <a href="podcast.html">Podcast</a>
+        <a href="music.html">Music</a>
+        <a href="business.html">Business</a>
       </div>
     </div>
-    <nav class="nav-links">
-      <a href="index.html">Home</a>
-      <a href="artists.html">Artists</a>
-      <a href="news.html" class="active">News</a>
-      <a href="premium.html">Premium</a>
-      <a href="advertise.html">Advertise</a>
-    </nav>
-    <div class="nav-actions">
-      <button class="theme-toggle" onclick="toggleTheme()">☀️</button>
-      <a href="login.html" class="btn btn-primary">Login</a>
+  </nav>
+
+  <main class="hero">
+    <span class="badge">📰 Venda Stories & Breaking Updates</span>
+    <h1>News</h1>
+    <p class="subtitle">Stay informed with the latest news, culture, and history from the Venda community.</p>
+  </main>
+
+  <section class="section">
+    <h2 class="section-title">Latest Stories</h2>
+    <p class="section-note">Breaking news, cultural updates, and community stories from Venda and beyond.</p>
+
+    <div class="grid">
+      <a class="news-card" href="#">
+        <div class="news-meta">Culture • Today</div>
+        <h2>Venda Heritage Month Celebrates Language & Tradition</h2>
+        <p>Annual celebration brings together artists, historians, and community leaders to preserve Tshivenda language and cultural practices.</p>
+        <span class="news-pill">Read Story</span>
+      </a>
+
+      <a class="news-card" href="#">
+        <div class="news-meta">Music • 2 hours ago</div>
+        <h2>Makhadzi Announces New Album "Venda Queen"</h2>
+        <p>Award-winning artist reveals upcoming album with 12 tracks featuring traditional Venda rhythms and modern production.</p>
+        <span class="news-pill">Read Story</span>
+      </a>
+
+      <a class="news-card" href="#">
+        <div class="news-meta">Business • Yesterday</div>
+        <h2>New Tech Hub Opens in Thohoyandou</h2>
+        <p>Innovation center aims to provide startup support and digital skills training to young entrepreneurs in Limpopo.</p>
+        <span class="news-pill">Read Story</span>
+      </a>
+
+      <a class="news-card" href="#">
+        <div class="news-meta">Education • 3 days ago</div>
+        <h2>Record Number of Venda Students Earn University Scholarships</h2>
+        <p>Over 200 students from the region secured full scholarships for 2026, with new NSFAS funding expanding opportunities.</p>
+        <span class="news-pill">Read Story</span>
+      </a>
+
+      <a class="news-card" href="#">
+        <div class="news-meta">Sports • 1 week ago</div>
+        <h2>Vhembe Football League Season Kicks Off</h2>
+        <p>12 teams compete in the regional league, with matches every weekend at Thohoyandou Stadium.</p>
+        <span class="news-pill">Read Story</span>
+      </a>
+
+      <a class="news-card" href="#">
+        <div class="news-meta">Community • 1 week ago</div>
+        <h2>Annual Venda Arts Festival Returns This Summer</h2>
+        <p>Three-week celebration of traditional dance, music, crafts, and culinary traditions draws visitors from across South Africa.</p>
+        <span class="news-pill">Read Story</span>
+      </a>
     </div>
-  </div>
-</header>
+  </section>
 
-<main>
-  <div class="page-header">
-    <div>
-      <h1 class="page-title">📰 Latest News</h1>
-      <p class="page-subtitle">Venda news, entertainment, and culture updates</p>
-    </div>
-    <div class="last-updated">
-      ✅ <span id="update-time">Auto-updated today</span>
-    </div>
-  </div>
-
-  <div id="news-grid" class="news-grid"></div>
-</main>
-
-<script>
-// News articles - Add new ones here daily or use API later
-const news = [
-  {
-    category: 'Music',
-    title: 'Makhadzi Announces New Album Release Date',
-    excerpt: 'Popular Venda artist Makhadzi has confirmed her highly anticipated new album will drop next month, featuring collaborations with international artists.',
-    image: 'https://i.ytimg.com/vi/hj5XOU9XgjM/maxresdefault.jpg',
-    date: '2 hours ago',
-    author: 'WANnation Team'
-  },
-  {
-    category: 'Business',
-    title: 'Venda Music Industry Sees 200% Growth in 2025',
-    excerpt: 'Local music streaming platforms report unprecedented growth as Venda artists gain international recognition and streaming revenue increases.',
-    image: 'https://images.unsplash.com/photo-1516280440614-6697288d5d38?w=800',
-    date: '5 hours ago',
-    author: 'Business Desk'
-  },
-  {
-    category: 'Culture',
-    title: 'Traditional Venda Dance Festival Draws Thousands',
-    excerpt: 'The annual Matsheloni Festival celebrated Venda culture with traditional dance, music, and food, attracting visitors from across South Africa.',
-    image: 'https://images.unsplash.com/photo-1533174072545-e8d4aa97edf9?w=800',
-    date: '1 day ago',
-    author: 'Culture Team'
-  },
-  {
-    category: 'Entertainment',
-    title: 'New Venda Hip Hop Artist Breaks Streaming Records',
-    excerpt: 'Rising star Mizo Phyll becomes the most-streamed Venda rapper in a single week, surpassing 1 million streams on multiple platforms.',
-    image: 'https://images.unsplash.com/photo-1493225255756-d9584f8606e9?w=800',
-    date: '2 days ago',
-    author: 'WANnation Team'
-  },
-  {
-    category: 'Technology',
-    title: 'WANnation Media Launches New Streaming Platform',
-    excerpt: 'The new platform brings Spotify-level quality to Venda music, featuring HD audio, exclusive content, and artist profiles.',
-    image: 'https://images.unsplash.com/photo-1557804506-669a67965ba0?w=800',
-    date: '3 days ago',
-    author: 'Tech Desk'
-  },
-  {
-    category: 'Gospel',
-    title: 'Mukwevho Sisters Win Gospel Artist of the Year',
-    excerpt: 'The beloved gospel group takes home top honors at the Venda Gospel Awards, marking their third consecutive win.',
-    image: 'https://i.ytimg.com/vi/RGFQYh8dRps/maxresdefault.jpg',
-    date: '4 days ago',
-    author: 'Gospel Desk'
-  }
-];
-
-function renderNews() {
-  document.getElementById('news-grid').innerHTML = news.map(article => `
-    <a href="#" class="news-card">
-      <div class="news-image" style="background-image: url('${article.image}')"></div>
-      <div class="news-content">
-        <span class="news-category">${article.category}</span>
-        <h3 class="news-title">${article.title}</h3>
-        <p class="news-excerpt">${article.excerpt}</p>
-        <div class="news-meta">
-          <span>📅 ${article.date}</span>
-          <span>✍️ ${article.author}</span>
-        </div>
-      </div>
-    </a>
-  `).join('');
-}
-
-function toggleTheme() {
-  const html = document.documentElement;
-  const current = html.getAttribute('data-theme');
-  const next = current === 'night' ? 'day' : 'night';
-  html.setAttribute('data-theme', next);
-  localStorage.setItem('wannation-theme', next);
-}
-
-function updateTime() {
-  const now = new Date();
-  const options = { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric', hour: '2-digit', minute: '2-digit' };
-  document.getElementById('update-time').textContent = now.toLocaleDateString('en-ZA', options);
-}
-
-document.addEventListener('DOMContentLoaded', () => {
-  const saved = localStorage.getItem('wannation-theme');
-  if(saved) document.documentElement.setAttribute('data-theme', saved);
-  
-  renderNews();
-  updateTime();
-  
-  // Auto-refresh every 24 hours
-  const lastUpdate = localStorage.getItem('wannation-news-update');
-  const now = Date.now();
-  if(!lastUpdate || (now - lastUpdate) > 24 * 60 * 60 * 1000) {
-    localStorage.setItem('wannation-news-update', now);
-    console.log('✅ News auto-refreshed');
-  }
-});
-</script>
+  <div class="footer">© 2026 WANnation Media</div>
 </body>
 </html>

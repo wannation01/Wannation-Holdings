@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Music | WANnation</title>
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+:root{
+  --bg:#000;
+  --card:rgba(255,255,255,.06);
+  --border:rgba(255,255,255,.12);
+  --text:#f5f5f7;
+  --muted:#a1a1a6;
+  --red:#e5000f;
+  --gold:#ffd700;
+  --blue:#0071e3;
+}
+html{scroll-behavior:smooth}
+body{
+  font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Inter,Arial,sans-serif;
+  background:
+    radial-gradient(circle at 15% 10%, rgba(229,0,15,.22), transparent 26%),
+    radial-gradient(circle at 85% 18%, rgba(0,113,227,.20), transparent 24%),
+    radial-gradient(circle at 50% 85%, rgba(255,215,0,.10), transparent 22%),
+    #000;
+  color:var(--text);
+  overflow-x:hidden;
+}
+.nav{
+  position:sticky;
+  top:0;
+  z-index:1000;
+  backdrop-filter:blur(24px);
+  background:rgba(0,0,0,.58);
+  border-bottom:1px solid rgba(255,255,255,.08);
+}
+.nav-inner{
+  max-width:1200px;
+  margin:0 auto;
+  padding:14px 20px;
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:16px;
+}
+.brand{
+  font-size:20px;
+  font-weight:800;
+  letter-spacing:-.03em;
+  background:linear-gradient(135deg,var(--red),var(--gold));
+  -webkit-background-clip:text;
+  -webkit-text-fill-color:transparent;
+  text-decoration:none;
+}
+.nav-links{
+  display:flex;
+  gap:18px;
+  flex-wrap:wrap;
+}
+.nav-links a{
+  color:var(--muted);
+  text-decoration:none;
+  font-size:14px;
+}
+.nav-links a:hover{color:#fff}
+.hero{
+  max-width:1200px;
+  margin:0 auto;
+  padding:92px 20px 54px;
+  text-align:center;
+}
+.badge{
+  display:inline-block;
+  padding:10px 18px;
+  border-radius:999px;
+  background:var(--card);
+  border:1px solid var(--border);
+  color:#fff;
+  font-size:13px;
+  backdrop-filter:blur(14px);
+}
+h1{
+  margin-top:22px;
+  font-size:clamp(44px,8vw,84px);
+  line-height:1.02;
+  letter-spacing:-.06em;
+  background:linear-gradient(135deg,#fff 0%,#d7d7da 35%,var(--red) 100%);
+  -webkit-background-clip:text;
+  -webkit-text-fill-color:transparent;
+}
+.subtitle{
+  margin:22px auto 0;
+  max-width:860px;
+  font-size:clamp(18px,2.2vw,28px);
+  line-height:1.55;
+  color:var(--muted);
+}
+.section{
+  max-width:1200px;
+  margin:0 auto;
+  padding:24px 20px 70px;
+}
+.section-title{
+  font-size:28px;
+  letter-spacing:-.04em;
+  margin-bottom:12px;
+}
+.section-note{
+  color:var(--muted);
+  margin-bottom:26px;
+  max-width:760px;
+  line-height:1.6;
+}
+.list{
+  display:grid;
+  gap:14px;
+}
+.track-item{
+  position:relative;
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  padding:18px 20px;
+  border-radius:18px;
+  background:rgba(255,255,255,.05);
+  border:1px solid rgba(255,255,255,.06);
+  transition:.25s ease;
+}
+.track-item:hover{
+  background:rgba(255,255,255,.08);
+  border-color:var(--red);
+}
+.track-info{
+  flex:1;
+}
+.track-title{
+  font-weight:600;
+  margin-bottom:4px;
+}
+.track-artist{
+  color:var(--muted);
+  font-size:14px;
+}
+.track-action{
+  padding:8px 14px;
+  border-radius:8px;
+  background:var(--red);
+  color:#fff;
+  border:none;
+  font-weight:600;
+  cursor:pointer;
+  text-decoration:none;
+}
+.footer{
+  padding:26px 20px 40px;
+  text-align:center;
+  color:var(--muted);
+  border-top:1px solid rgba(255,255,255,.08);
+}
+</style>
+</head>
+<body>
+  <nav class="nav">
+    <div class="nav-inner">
+      <a href="index.html" class="brand">WANnation</a>
+      <div class="nav-links">
+        <a href="index.html">Home</a>
+        <a href="news.html">News</a>
+        <a href="artists.html">Artists</a>
+        <a href="podcast.html">Podcast</a>
+        <a href="business.html">Business</a>
+      </div>
+    </div>
+  </nav>
+
+  <main class="hero">
+    <span class="badge">🎧 Tracks & Releases</span>
+    <h1>Music</h1>
+    <p class="subtitle">Stream the latest tracks, premieres, and music features from Venda's hottest artists.</p>
+  </main>
+
+  <section class="section">
+    <h2 class="section-title">New Releases</h2>
+    <p class="section-note">Fresh tracks added daily. Stream, download, or add to your playlist.</p>
+
+    <div class="list">
+      <div class="track-item">
+        <div class="track-info">
+          <div class="track-title">Venda Queen (Intro)</div>
+          <div class="track-artist">Makhadzi</div>
+        </div>
+        <a class="track-action" href="#">▶ Play</a>
+      </div>
+
+      <div class="track-item">
+        <div class="track-info">
+          <div class="track-title">Street Stories (Feat. King Monada)</div>
+          <div class="track-artist">Mizo Phyll</div>
+        </div>
+        <a class="track-action" href="#">▶ Play</a>
+      </div>
+
+      <div class="track-item">
+        <div class="track-info">
+          <div class="track-title">Groove Deep</div>
+          <div class="track-artist">DJ Olimela</div>
+        </div>
+        <a class="track-action" href="#">▶ Play</a>
+      </div>
+
+      <div class="track-item">
+        <div class="track-info">
+          <div class="track-title">Faith Rising</div>
+          <div class="track-artist">Mukwevho Sisters</div>
+        </div>
+        <a class="track-action" href="#">▶ Play</a>
+      </div>
+
+      <div class="track-item">
+        <div class="track-info">
+          <div class="track-title">Tshivenda Dreams</div>
+          <div class="track-artist">Venda Jazz Collective</div>
+        </div>
+        <a class="track-action" href="#">▶ Play</a>
+      </div>
+
+      <div class="track-item">
+        <div class="track-info">
+          <div class="track-title">Dancing Till Dawn</div>
+          <div class="track-artist">King Monada</div>
+        </div>
+        <a class="track-action" href="#">▶ Play</a>
+      </div>
+    </div>
+  </section>
+
+  <div class="footer">© 2026 WANnation Media</div>
+</body>
+</html>

@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Artists | WANnation</title>
+<title>Business | WANnation</title>
 <style>
 *{margin:0;padding:0;box-sizing:border-box}
 :root{
@@ -114,18 +114,16 @@ h1{
 }
 .grid{
   display:grid;
-  grid-template-columns:repeat(3, minmax(0,1fr));
+  grid-template-columns:repeat(2, minmax(0,1fr));
   gap:18px;
 }
-@media (max-width:1100px){.grid{grid-template-columns:repeat(2,minmax(0,1fr))}}
-@media (max-width:640px){.grid{grid-template-columns:1fr}}
-.artist-card{
+@media (max-width:1100px){.grid{grid-template-columns:1fr}}
+.business-card{
   position:relative;
   display:block;
   text-decoration:none;
   color:inherit;
   padding:28px;
-  text-align:center;
   border-radius:28px;
   background:linear-gradient(180deg, rgba(255,255,255,.07), rgba(255,255,255,.04));
   border:1px solid var(--border);
@@ -134,7 +132,7 @@ h1{
   transition:.28s ease;
   overflow:hidden;
 }
-.artist-card::before{
+.business-card::before{
   content:"";
   position:absolute;
   inset:0;
@@ -142,34 +140,40 @@ h1{
   opacity:0;
   transition:.28s ease;
 }
-.artist-card:hover{transform:translateY(-6px)}
-.artist-card:hover::before{opacity:1}
-.artist-avatar{
+.business-card:hover{transform:translateY(-6px)}
+.business-card:hover::before{opacity:1}
+.business-icon{
   position:relative;
-  font-size:60px;
+  font-size:40px;
   margin-bottom:18px;
 }
-.artist-card h2{
+.business-card h2{
   position:relative;
   font-size:22px;
   letter-spacing:-.03em;
   margin-bottom:8px;
 }
-.artist-genre{
+.business-category{
   position:relative;
-  color:var(--red);
+  color:var(--gold);
   font-size:13px;
   margin-bottom:12px;
   text-transform:uppercase;
   letter-spacing:.08em;
 }
-.artist-card p{
+.business-card p{
   position:relative;
   color:var(--muted);
   line-height:1.55;
   font-size:14px;
+  margin-bottom:12px;
 }
-.artist-pill{
+.business-location{
+  position:relative;
+  color:var(--muted);
+  font-size:13px;
+}
+.business-pill{
   position:relative;
   display:inline-block;
   margin-top:16px;
@@ -194,70 +198,76 @@ h1{
       <div class="nav-links">
         <a href="index.html">Home</a>
         <a href="news.html">News</a>
+        <a href="artists.html">Artists</a>
         <a href="podcast.html">Podcast</a>
         <a href="music.html">Music</a>
-        <a href="business.html">Business</a>
       </div>
     </div>
   </nav>
 
   <main class="hero">
-    <span class="badge">🎵 Musicians & Creators</span>
-    <h1>Artists</h1>
-    <p class="subtitle">Discover emerging and established Venda musicians, showcasing profiles, releases, and creative vision.</p>
+    <span class="badge">🏢 Local Businesses & Services</span>
+    <h1>Business</h1>
+    <p class="subtitle">Discover local businesses, featured promotions, and enterprise opportunities in Venda and Limpopo.</p>
   </main>
 
   <section class="section">
-    <h2 class="section-title">Featured Artists</h2>
-    <p class="section-note">Explore the talent and creativity of Venda's music scene.</p>
+    <h2 class="section-title">Featured Businesses</h2>
+    <p class="section-note">Support local enterprise. Browse restaurants, services, shops, and entrepreneurs.</p>
 
     <div class="grid">
-      <a class="artist-card" href="#">
-        <div class="artist-avatar">🎤</div>
-        <h2>Makhadzi</h2>
-        <div class="artist-genre">Traditional • Pop</div>
-        <p>Award-winning artist blending traditional Venda rhythms with contemporary pop sounds.</p>
-        <span class="artist-pill">View Profile</span>
+      <a class="business-card" href="#">
+        <div class="business-icon">🍽️</div>
+        <h2>Thohoyandou Central Restaurant</h2>
+        <div class="business-category">Hospitality</div>
+        <p>Premium dining experience featuring traditional Venda cuisine and modern South African flavors.</p>
+        <div class="business-location">📍 Thohoyandou Central, Limpopo</div>
+        <span class="business-pill">Visit Website</span>
       </a>
 
-      <a class="artist-card" href="#">
-        <div class="artist-avatar">🎸</div>
-        <h2>Mizo Phyll</h2>
-        <div class="artist-genre">Hip Hop • Rap</div>
-        <p>Rising hip hop artist breaking streaming records with authentic Venda storytelling.</p>
-        <span class="artist-pill">View Profile</span>
+      <a class="business-card" href="#">
+        <div class="business-icon">🏨</div>
+        <h2>Vhembe Luxury Lodge</h2>
+        <div class="business-category">Travel & Tourism</div>
+        <p>5-star accommodation with cultural tours, conference facilities, and traditional heritage experiences.</p>
+        <div class="business-location">📍 Louis Trichardt, Limpopo</div>
+        <span class="business-pill">Book Now</span>
       </a>
 
-      <a class="artist-card" href="#">
-        <div class="artist-avatar">🎹</div>
-        <h2>Mukwevho Sisters</h2>
-        <div class="artist-genre">Gospel • Soul</div>
-        <p>Beloved gospel group with 3-time Gospel Artist of the Year wins.</p>
-        <span class="artist-pill">View Profile</span>
+      <a class="business-card" href="#">
+        <div class="business-icon">💊</div>
+        <h2>Toni Pharmacy & Clinic</h2>
+        <div class="business-category">Healthcare</div>
+        <p>Full-service pharmacy and primary healthcare clinic serving Thohoyandou community since 2015.</p>
+        <div class="business-location">📍 Thohoyandou, Limpopo</div>
+        <span class="business-pill">Contact</span>
       </a>
 
-      <a class="artist-card" href="#">
-        <div class="artist-avatar">🥁</div>
-        <h2>King Monada</h2>
-        <div class="artist-genre">Amapiano • Dance</div>
-        <p>Amapiano producer revolutionizing dance music with deep grooves and infectious beats.</p>
-        <span class="artist-pill">View Profile</span>
+      <a class="business-card" href="#">
+        <div class="business-icon">🚗</div>
+        <h2>Vhembe Auto Group</h2>
+        <div class="business-category">Automotive</div>
+        <p>New & used vehicle sales, servicing, and financing. Trusted dealership for 20+ years.</p>
+        <div class="business-location">📍 Louis Trichardt, Limpopo</div>
+        <span class="business-pill">View Inventory</span>
       </a>
 
-      <a class="artist-card" href="#">
-        <div class="artist-avatar">🎧</div>
-        <h2>DJ Olimela</h2>
-        <div class="artist-genre">Electronic • Afrobeats</div>
-        <p>Electronic producer fusing Afrobeats with modern production techniques.</p>
-        <span class="artist-pill">View Profile</span>
+      <a class="business-card" href="#">
+        <div class="business-icon">🎓</div>
+        <h2>Venda Tech Academy</h2>
+        <div class="business-category">Education & Tech</div>
+        <p>Coding bootcamps, digital skills training, and internship programs for youth in Limpopo.</p>
+        <div class="business-location">📍 Thohoyandou Central, Limpopo</div>
+        <span class="business-pill">Enroll Today</span>
       </a>
 
-      <a class="artist-card" href="#">
-        <div class="artist-avatar">🎼</div>
-        <h2>Venda Jazz Collective</h2>
-        <div class="artist-genre">Jazz • World Music</div>
-        <p>Innovative jazz ensemble celebrating traditional Venda instrumentation.</p>
-        <span class="artist-pill">View Profile</span>
+      <a class="business-card" href="#">
+        <div class="business-icon">👕</div>
+        <h2>Venda Crafts & Fashion</h2>
+        <div class="business-category">Retail & Fashion</div>
+        <p>Handmade traditional and contemporary clothing, art, and craft exports worldwide.</p>
+        <div class="business-location">📍 Thohoyandou, Limpopo</div>
+        <span class="business-pill">Shop Online</span>
       </a>
     </div>
   </section>
