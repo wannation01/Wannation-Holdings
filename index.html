@@ -51,6 +51,8 @@ body{
   background:linear-gradient(135deg,var(--red),var(--gold));
   -webkit-background-clip:text;
   -webkit-text-fill-color:transparent;
+  text-decoration:none;
+  cursor:pointer;
 }
 .nav-links{
   display:flex;
@@ -237,9 +239,8 @@ h1{
 <body>
   <nav class="nav">
     <div class="nav-inner">
-      <div class="brand">WANnation</div>
+      <a href="#" class="brand">WANnation</a>
       <div class="nav-links">
-        <a href="#platform">Platform</a>
         <a href="#pages">Pages</a>
         <a href="#culture">Culture</a>
         <a href="#advertise">Advertise</a>
@@ -257,40 +258,15 @@ h1{
     </div>
   </main>
 
-  <section class="section" id="platform">
-    <h2 class="section-title">Platform Overview</h2>
-    <p class="section-note">This homepage shows the content people need immediately, then sends them to the right page or section when they click.</p>
-    <div class="split">
-      <div class="panel">
-        <h3 style="font-size:22px;margin-bottom:10px;">Featured Content</h3>
-        <div class="list">
-          <div class="row">Latest news and Venda stories.</div>
-          <div class="row">Artist profiles and music releases.</div>
-          <div class="row">Podcast episodes and interviews.</div>
-          <div class="row">Business listings and promotions.</div>
-        </div>
-      </div>
-      <div class="panel">
-        <h3 style="font-size:22px;margin-bottom:10px;">Site Purpose</h3>
-        <div class="list">
-          <div class="row">Show content, not dead ends.</div>
-          <div class="row">Sell ad space and sponsorships.</div>
-          <div class="row">Keep a premium Apple-like style.</div>
-          <div class="row">Make every click go somewhere useful.</div>
-        </div>
-      </div>
-    </div>
-  </section>
-
   <section class="section" id="pages">
     <h2 class="section-title">Pages</h2>
     <p class="section-note">These are the main destinations in the repo. Each one should match the same visual style.</p>
 
     <div class="grid">
-      <a class="card" href="news.html"><div class="icon">📰</div><h2>News</h2><p>Venda stories, breaking updates, and history.</p><span class="pill">Open news.html</span></a>
       <a class="card" href="artists.html"><div class="icon">🎵</div><h2>Artists</h2><p>Musicians showcasing profiles, releases, and visuals.</p><span class="pill">Open artists.html</span></a>
       <a class="card" href="podcast.html"><div class="icon">🎙️</div><h2>Podcast</h2><p>Episodes, interviews, and conversations.</p><span class="pill">Open podcast.html</span></a>
       <a class="card" href="music.html"><div class="icon">🎧</div><h2>Music</h2><p>Tracks, premieres, and music features.</p><span class="pill">Open music.html</span></a>
+      <a class="card" href="news.html"><div class="icon">📰</div><h2>News</h2><p>Venda stories, breaking updates, and history.</p><span class="pill">Open news.html</span></a>
       <a class="card" href="business.html"><div class="icon">🏢</div><h2>Business</h2><p>Local businesses and featured promotions.</p><span class="pill">Open business.html</span></a>
       <a class="card" href="culture.html"><div class="icon">🏛️</div><h2>Culture</h2><p>Heritage, language, and community history.</p><span class="pill">Open culture.html</span></a>
       <a class="card" href="media-kit.html"><div class="icon">💼</div><h2>Media Kit</h2><p>Ad placements, sponsorships, and pricing.</p><span class="pill">Open media-kit.html</span></a>
