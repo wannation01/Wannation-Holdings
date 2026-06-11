@@ -1,0 +1,26 @@
+[
+  {
+    "id": 1,
+    "title": "Dzata Ruins Restoration Project Gains Momentum",
+    "desc": "Community leaders and heritage organisations are working to preserve the ancient stone walls of Dzata.",
+    "time": "4h ago",
+    "cat": "Heritage",
+    "image": "https://picsum.photos/id/1015/800/450"
+  },
+  {
+    "id": 2,
+    "title": "Una Rams Releases New Single 'Ndi Matsheloni'",
+    "desc": "The popular artist drops a new track celebrating Venda greetings and pride.",
+    "time": "Yesterday",
+    "cat": "Music",
+    "image": "https://picsum.photos/id/201/800/450"
+  },
+  {
+    "id": 3,
+    "title": "Domba Initiation Ceremonies Set for 2026",
+    "desc": "Young Venda maidens prepare for the sacred Python Dance at Lake Fundudzi.",
+    "time": "2d ago",
+    "cat": "Culture",
+    "image": "https://picsum.photos/id/1018/800/450"
+  }
+]
