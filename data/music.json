@@ -1,0 +1,23 @@
+[
+  {
+    "id": 1,
+    "title": "Ndi Matsheloni",
+    "artist": "Una Rams",
+    "plays": "248K",
+    "image": "https://picsum.photos/id/1015/300/300"
+  },
+  {
+    "id": 2,
+    "title": "Venda Nights",
+    "artist": "DJ Thohoyandou",
+    "plays": "142K",
+    "image": "https://picsum.photos/id/201/300/300"
+  },
+  {
+    "id": 3,
+    "title": "Dzata Drum Call",
+    "artist": "VP Talking Muimbi",
+    "plays": "187K",
+    "image": "https://picsum.photos/id/133/300/300"
+  }
+]
