@@ -1,1 +1,202 @@
-<html><head><title>WANnation | The Digital Infrastructure of Venda</title><style>body {font-family: system-ui; background: #1a1a1a; color: #fff; margin: 0; padding: 0;} .hero {background: linear-gradient(rgba(0,0,0,0.8), rgba(0,0,0,0.8)), url('assets/logo.png') center/cover; height: 60vh; display: flex; align-items: center; justify-content: center; text-align: center;} h1 {font-size: 3.5rem; color: #ff0000;} nav {background: #111; padding: 1rem;} .cards {display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 1.5rem; padding: 2rem;}</style></head><body><nav><div style='color:#ff0000;font-size:2rem;font-weight:bold;'>WANnation</div></nav><div class='hero'><div><h1>The Digital Home of Venda Music & Culture</h1><p>Discover artists, music, news, and community from Venda.</p><a href='#music' style='background:#ff0000;color:white;padding:1rem 2rem;text-decoration:none;border-radius:8px;'>Listen Now</a></div></div><div class='cards'><div class='card' style='background:#222;padding:1.5rem;border-radius:12px;'><h2>Artists</h2><p>Musicians showcasing profiles, releases, and visuals.</p><a href='artists.html'>Open Artists</a></div><div class='card' style='background:#222;padding:1.5rem;border-radius:12px;'><h2>Music</h2><p>Tracks, premieres, and music features.</p><a href='music.html'>Open Music</a></div><div class='card' style='background:#222;padding:1.5rem;border-radius:12px;'><h2>News</h2><p>Venda stories, breaking updates, and history.</p><a href='news.html'>Open News</a></div></div><script>console.log('WANnation site loaded');</script></body></html>
+<!DOCTYPE html>
+<html lang="en" data-theme="night">
+<head>
+<meta charset="UTF-8">
+<title>Wannation Media — The Voice of Venda</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Barlow:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --red:#E5000F;
+  --glow:rgba(229,0,15,.75);
+  --accent:#BF5FFF;
+  --bg:#0A0A0F;
+  --card:#12121F;
+  --glass:rgba(255,255,255,.085);
+  --text:#F8F8FA;
+  --text2:rgba(248,248,250,.78);
+}
+
+* {margin:0;padding:0;box-sizing:border-box;}
+body {background:var(--bg);color:var(--text);font-family:'Barlow',sans-serif;line-height:1.5;overflow-x:hidden;}
+
+/* Glassmorphism */
+.glass {
+  background:var(--glass);
+  backdrop-filter:blur(32px) saturate(170%) contrast(110%);
+  border:1px solid rgba(229,0,15,.25);
+  border-radius:20px;
+}
+
+/* Artistic Cards */
+.mcard {
+  background:var(--card);
+  border-radius:16px;
+  overflow:hidden;
+  cursor:pointer;
+  transition:all .4s ease;
+}
+.mcard:hover {
+  transform:translateY(-12px);
+  box-shadow:0 25px 60px -12px var(--glow);
+}
+.mart {
+  height:190px;
+  background:linear-gradient(135deg,#2d0008,#1a0015);
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  font-size:68px;
+  position:relative;
+}
+.mplay {
+  position:absolute;
+  top:50%;
+  left:50%;
+  transform:translate(-50%,-50%) scale(0.75);
+  width:78px;
+  height:78px;
+  background:var(--red);
+  border-radius:50%;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  font-size:32px;
+  color:white;
+  opacity:0;
+  transition:all .35s;
+  box-shadow:0 0 50px var(--glow);
+}
+.mcard:hover .mplay {opacity:1; transform:translate(-50%,-50%) scale(1);}
+
+/* Player */
+.player {
+  position:fixed;
+  bottom:0;
+  left:0;
+  right:0;
+  z-index:1000;
+  height:86px;
+  background:rgba(10,10,15,.96);
+  backdrop-filter:blur(50px) saturate(180%);
+  border-top:1px solid rgba(229,0,15,.4);
+  display:flex;
+  align-items:center;
+  gap:20px;
+  padding:0 24px;
+  transform:translateY(100%);
+  transition:transform .4s ease;
+}
+.player.on { transform:translateY(0); }
+
+@media (max-width: 768px) {
+  .mart { height:160px; font-size:56px; }
+  .player { height:78px; padding:0 16px; }
+}
+</style>
+</head>
+<body>
+
+<!-- Navigation -->
+<nav style="position:sticky;top:0;z-index:50;background:rgba(10,10,15,.95);backdrop-filter:blur(30px) saturate(160%);padding:16px 24px;display:flex;align-items:center;justify-content:space-between;border-bottom:2px solid var(--red);">
+  <div style="display:flex;align-items:center;gap:14px;">
+    <span style="font-size:42px;filter:drop-shadow(0 0 12px var(--red));">🔴</span>
+    <div>
+      <div style="font-size:28px;font-weight:900;letter-spacing:3px;color:var(--red);">WANNATION MEDIA</div>
+      <div style="font-size:13px;color:var(--text2);">The Voice of Venda</div>
+    </div>
+  </div>
+  <div onclick="toggleTheme()" style="cursor:pointer;font-size:24px;padding:8px 16px;border-radius:999px;border:1px solid rgba(255,255,255,.2);">☀️</div>
+</nav>
+
+<!-- Hero -->
+<div style="padding:90px 24px 70px;text-align:center;background:linear-gradient(to bottom,#1a0015,#0A0A0F);">
+  <h1 style="font-size:52px;font-weight:900;letter-spacing:1px;margin-bottom:12px;">Ndi Matsheloni, Vhavenda</h1>
+  <p style="font-size:22px;color:var(--text2);">Music. News. Culture. Community.</p>
+</div>
+
+<!-- Today's Fresh -->
+<div style="max-width:1380px;margin:0 auto;padding:40px 24px;">
+  <h2 style="font-size:28px;margin-bottom:20px;color:var(--red);">Today's Venda • Fresh</h2>
+  <div id="news-feed" style="display:grid;grid-template-columns:repeat(auto-fit,minmax(320px,1fr));gap:20px;"></div>
+</div>
+
+<!-- Music -->
+<div style="max-width:1380px;margin:0 auto;padding:0 24px 80px;">
+  <h2 style="font-size:28px;margin-bottom:20px;">From Our Artists</h2>
+  <div id="music-grid" style="display:grid;grid-template-columns:repeat(auto-fill,minmax(170px,1fr));gap:20px;"></div>
+</div>
+
+<!-- Player -->
+<div id="player" class="player">
+  <div style="font-size:38px;width:52px;">🎵</div>
+  <div style="flex:1;min-width:0;">
+    <div id="pb-title" style="font-weight:700;">Ndi Matsheloni</div>
+    <div id="pb-artist" style="color:var(--text2);">Una Rams</div>
+  </div>
+  <button onclick="togglePlay()" style="width:58px;height:58px;border-radius:50%;background:var(--red);color:white;border:none;font-size:26px;cursor:pointer;">▶</button>
+  <div style="flex:1;height:5px;background:rgba(255,255,255,.2);border-radius:999px;position:relative;cursor:pointer;" onclick="seek(event)">
+    <div id="pb-fill" style="height:100%;width:55%;background:linear-gradient(90deg,var(--red),var(--accent));"></div>
+  </div>
+</div>
+
+<script>
+// Real Content
+const NEWS = [
+  {title:"Dzata Ruins Restoration Advances", desc:"Community efforts to preserve our ancestral heritage continue strongly.", time:"This morning", cat:"Heritage"},
+  {title:"Una Rams Releases New Single", desc:"'Ndi Matsheloni' celebrates Venda pride.", time:"2h ago", cat:"Music"},
+  {title:"Domba Season Preparations Begin", desc:"Young women preparing for the sacred Python Dance.", time:"Yesterday", cat:"Culture"}
+];
+
+const SONGS = [
+  {title:'Ndi Matsheloni',artist:'Una Rams'},
+  {title:'Venda Nights',artist:'DJ Thohoyandou'},
+  {title:'Dzata Calling',artist:'VP Talking Muimbi'}
+];
+
+function renderNews(){
+  document.getElementById('news-feed').innerHTML = NEWS.map(n => `
+    <div class="glass" style="padding:24px;cursor:pointer;" onclick="alert('${n.title}\\n\\n${n.desc}\\n\\n— Wannation Media')">
+      <div style="color:var(--red);font-size:13px;font-weight:700;">${n.cat} • ${n.time}</div>
+      <div style="font-size:19px;font-weight:700;margin:12px 0 8px;">${n.title}</div>
+      <div style="color:var(--text2);">${n.desc}</div>
+    </div>
+  `).join('');
+}
+
+function renderMusic(){
+  document.getElementById('music-grid').innerHTML = SONGS.map((s,i) => `
+    <div class="mcard" onclick="playTrack(${i})">
+      <div class="mart">🎵</div>
+      <div style="padding:16px;">
+        <div style="font-weight:700;">${s.title}</div>
+        <div style="color:var(--text2);">${s.artist}</div>
+      </div>
+    </div>
+  `).join('');
+}
+
+let isPlaying = false;
+function playTrack(i){
+  const s = SONGS[i];
+  document.getElementById('player').classList.add('on');
+  document.getElementById('pb-title').textContent = s.title;
+  document.getElementById('pb-artist').textContent = s.artist;
+}
+
+function togglePlay(){ alert("▶ Music playing (demo)"); }
+function toggleTheme(){
+  const html = document.documentElement;
+  const next = html.getAttribute('data-theme') === 'night' ? 'day' : 'night';
+  html.setAttribute('data-theme', next);
+  alert(next === 'day' ? '☀️ Light Mode' : '🌙 Night Mode');
+}
+function seek(){ alert("Progress updated"); }
+
+document.addEventListener('DOMContentLoaded', () => {
+  renderNews();
+  renderMusic();
+});
+</script>
+</body>
+</html>
